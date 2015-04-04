@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="pt">
+	<head>
+		<title>iRave</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="time.js"></script>
+		<script>
+			function initialize(){
+				writeClock();
+				beginScrSaverTimeout();
+			}
+		</script>
+		<style>
+			#clock{
+				float: right;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="float: left">iRave</div>
+		<div id="clock"></div>
+		<div style="text-align: center">
+			<br><br>
+			<button><img src="mapa.png" width="21" height="21"></button>
+			<a href="wallet.html"><button><img src="carteira.png" width="21" height="21"></button></a><br>
+			<button><img src="cartaz.png" width="21" height="21"></button>
+			<a href="locked.html"><button><img src="lock.png" width="21" height="21"></button></a>
+		</div>
+		<script>initialize()</script>
+	</body>
+</html>

@@ -1,0 +1,12 @@
+@font-face {
+	font-family: Roboto;
+	src: url("Roboto-Regular.ttf");
+}
+*{
+	font-family: Roboto;
+	font-size: 6.5pt;
+}
+#clock{
+	text-align: center;
+	margin: -5%;
+}

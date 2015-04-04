@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html lang="pt">
+	<head>
+		<title>iRave</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="time.js"></script>
+		<script src="money.js"></script>
+		<script>
+			function initialize(){
+				writeClock();
+				printBalance();
+			}
+		</script>
+	</head>
+	<body>
+		<div style="float: left"><a href="start-iRave.html"><button width="5" height="5">&lsaquo;</button></a>&nbsp;Saldo: €<span id="balance"></span></div>
+		<div style="float: right" id="clock"></div>
+		<script>initialize()</script>
+	</body>
+</html>

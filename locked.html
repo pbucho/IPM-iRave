@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="pt">
+	<head>
+		<title>iRave</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<style>
+			*{
+				font-family: Roboto;
+				background-color: black;
+				color: white;
+			}
+			#clock{
+				font-size: 14pt;
+			}
+		</style>
+		<script src="time.js"></script>
+	</head>
+	<body onclick="window.location='start-iRave.html'">
+		<div style="text-align: center; font-size: 20pt; vertical-align: middle;">
+			<div id="clock"></div>
+			<div style="font-size: 9pt">
+				Tocar para desbloquear
+			</div>
+		</div>
+		<script>writeClock(true)</script>
+	</body>
+</html>
