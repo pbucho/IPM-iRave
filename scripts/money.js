@@ -1,4 +1,4 @@
-var balance = 30;
+var balance = 150;
 
 function printBalance(){
 	var output = balance;

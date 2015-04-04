@@ -11,16 +11,26 @@ function writeClock(longdt){
 	minute = addLeadingZero(now.getMinutes());
 	day = addLeadingZero(now.getDate());
 	month = addLeadingZero(now.getMonth() + 1);
+	
 	if(longdt)
 		year = addLeadingZero(now.getFullYear());
 
 	var output = hour + ":" + minute + "<br>" + day + "-" + month;
+	
 	if(longdt)
 		output += "-" + year;
+	
 	document.getElementById("clock").innerHTML = output;
-	interval = setInterval(function callMeMaybe(){writeClock(longdt);}, 10000);
+	
+	interval = setInterval(function(){
+									writeClock(longdt);
+									}
+									, 10000);
 }
 
 function beginScrSaverTimeout(){
-	timeoutSleep = setInterval(function goToSleep(){window.location = "locked.html";}, 120000);
+	timeoutSleep = setInterval(function(){
+										window.location = "locked.html";
+										}
+										, 120000);
 }
