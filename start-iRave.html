@@ -2,11 +2,13 @@
 <html lang="pt">
 	<head>
 		<title>iRave</title>
+		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<script src="time.js"></script>
+		<script src="scripts/funcs.js"></script>
+		<script src="scripts/time.js"></script>
 		<script>
 			function initialize(){
-				writeClock();
+				clockRoutine();
 				beginScrSaverTimeout();
 			}
 		</script>
@@ -21,11 +23,27 @@
 		<div id="clock"></div>
 		<div style="text-align: center">
 			<br><br>
-			<button><img src="mapa.png" width="21" height="21"></button>
-			<a href="wallet.html"><button><img src="carteira.png" width="21" height="21"></button></a><br>
-			<button><img src="cartaz.png" width="21" height="21"></button>
-			<a href="locked.html"><button><img src="lock.png" width="21" height="21"></button></a>
+			
+			<button onclick="goToThis('map/map.html')">
+				<img src="images/mapa.png" width="21" height="21">
+			</button>
+			
+			<button onclick="goToThis('wallet/wallet.html')">
+				<img src="images/carteira.png" width="21" height="21">
+			</button>
+			
+			<br>
+			
+			<button onclick="goToThis('board/board.html')">
+				<img src="images/cartaz.png" width="21" height="21">
+			</button>
+			
+			<button onclick="goToThis('locked.html')">
+				<img src="images/lock.png" width="21" height="21">
+			</button>
 		</div>
-		<script>initialize()</script>
+		<script>
+			initialize()
+		</script>
 	</body>
 </html>

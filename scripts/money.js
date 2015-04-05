@@ -1,4 +1,5 @@
-var balance = 30;
+var balance = 150;
+var pin = 1234;
 
 function printBalance(){
 	var output = balance;

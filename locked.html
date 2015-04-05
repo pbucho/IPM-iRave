@@ -2,9 +2,12 @@
 <html lang="pt">
 	<head>
 		<title>iRave</title>
+		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="scripts/time.js"></script>
+		<script src="scripts/funcs.js"></script>
 		<style>
-			*{
+			body{
 				font-family: Roboto;
 				background-color: black;
 				color: white;
@@ -13,12 +16,12 @@
 				font-size: 14pt;
 			}
 		</style>
-		<script src="time.js"></script>
 	</head>
-	<body onclick="window.location='start-iRave.html'">
+	<body onclick="goToThis('start-iRave.html')">
 		<div style="text-align: center; font-size: 20pt; vertical-align: middle;">
 			<div id="clock"></div>
 			<div style="font-size: 9pt">
+				<p></p><!-- para dar um espaço menor que um <br> -->
 				Tocar para desbloquear
 			</div>
 		</div>

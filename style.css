@@ -1,6 +1,7 @@
 @font-face {
 	font-family: Roboto;
-	src: url("Roboto-Regular.ttf");
+	line-height: 1%;
+	src: url("fonts/Roboto-Regular.ttf");
 }
 *{
 	font-family: Roboto;
@@ -9,4 +10,7 @@
 #clock{
 	text-align: center;
 	margin: -5%;
+}
+ul li{
+	margin-left: -40%;
 }
