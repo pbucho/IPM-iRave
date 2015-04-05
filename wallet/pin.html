@@ -11,23 +11,96 @@
 		<script>
 			function initialize(){
 				clockRoutine();
-				printBalance();
+			}
+			
+			function checkPinAndProceed(toHere){
+				var ok = checkEnteredPin();
+	
+				resetEnteredPin();
+				if(ok)
+					goToThis(toHere);
+				else{
+					printPinChars();
+					changeBgColor("red");
+					intId = setInterval(function(){
+													changeBgColor("white");
+													clearInterval(intId);
+													},
+													1000);
+				}
 			}
 		</script>
 	</head>
 	<body>
-		<div style="float: left">Saldo: €<span id="balance"></span></div>
-		<div style="float: right" id="clock"></div><br>
-		Introduza o PIN
-		<table border="0">
-			<tr style="padding-botton: 0em">
-				<td><button>1</button></td><td><button>2</button></td><td><button>3</button></td><td><button>OK</button></td>
+		<div style="float: right" id="clock"></div>
+		Introduza o seu PIN
+		<div id="pin_space" style="text-align: center">&nbsp;</div>
+		<table border="0" style="border-spacing: 0px">
+			<tr>
+				<td>
+					<button onclick="addToEnteredPin(1)">
+						1
+					</button>
+				</td>
+				<td>
+					<button onclick="addToEnteredPin(2)">
+						2
+					</button>
+				</td>
+				<td>
+					<button onclick="addToEnteredPin(3)">
+						3
+					</button>
+				</td>
+				<td>
+					<button onclick="goToThis('sensor-ok.html')">
+						Cancel.
+					</button>
+				</td>
 			</tr>
 			<tr>
-				<td><button>4</button></td><td><button>5</button></td><td><button>6</button></td><td><button>Corr</button></td>
+				<td>
+					<button onclick="addToEnteredPin(4)">
+						4
+					</button>
+				</td>
+				<td>
+					<button onclick="addToEnteredPin(5)">
+						5
+					</button>
+				</td>
+				<td>
+					<button onclick="addToEnteredPin(6)">
+						6
+					</button>
+				</td>
+				<td>
+					<button onclick="resetEnteredPin()">
+						Corrig.
+					</button>
+				</td>
 			</tr>
 			<tr>
-				<td><button>7</button></td><td><button>8</button></td><td><button>9</button></td><td><button>Canc</button></td>
+				<td>
+					<button onclick="addToEnteredPin(7)">
+						7
+					</button>
+				</td>
+				<td>
+					<button onclick="addToEnteredPin(8)">
+						8
+					</button>
+				</td>
+				<td>
+					<button onclick="addToEnteredPin(9)">
+						9
+					</button>
+				</td>
+				<td>
+					<button onclick="checkPinAndProceed('buy-ok.html')">
+						OK
+					</button>
+				</td>
 			</tr>
 		</table>
 		<script>

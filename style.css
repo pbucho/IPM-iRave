@@ -11,6 +11,6 @@
 	text-align: center;
 	margin: -5%;
 }
-ul li{
+ul > li{
 	margin-left: -40%;
 }

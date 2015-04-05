@@ -8,3 +8,7 @@ function waitBeforeGo(timeSec, url){
 							},
 							timeSec * 1000);
 }
+
+function changeBgColor(color) {
+    document.body.style.backgroundColor = color;
+}
