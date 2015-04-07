@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="pt">
+	<head>
+		<title>iRave</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../style.css">
+		<script src="../scripts/funcs.js"></script>
+		<script src="../scripts/time.js"></script>
+		<script src="../scripts/money.js"></script>
+		<script>
+		function initialize(){
+				clockRoutine();
+				printBalance();
+			}
+		</script>
+		<style>
+			#voltar {
+				margin-left: 30px;
+			
+				margin-top:5px;
+			}
+			#msg {
+				padding-top: 10px;
+				clear:both;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="float: left">Saldo: &#8364; <span id="balance"></span></div>
+		<div style="float: right" id="clock"></div>
+
+		<p id="msg">Pagamento efectuado com sucesso!</p>
+
+		<button id="voltar" onclick="goToThis('../start-iRave.html')">Voltar</button>
+
+		<script>
+			initialize();
+		</script>
+	</body>
+
+</html>
