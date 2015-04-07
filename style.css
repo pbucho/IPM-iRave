@@ -3,6 +3,12 @@
 	line-height: 1%;
 	src: url("fonts/Roboto-Regular.ttf");
 }
+#clock{
+		float: right;
+		border:1px solid black;
+		border-radius:4px;
+		width:24px;
+}
 *{
 	font-family: Roboto;
 	font-size: 6.5pt;
@@ -13,4 +19,33 @@
 }
 ul > li{
 	margin-left: -40%;
+}
+
+#sensor-ok_list li {
+
+	list-style: none;
+}
+
+#final_balance {
+	font-size: 9px;
+}
+
+.numerical {
+
+	width:10px;
+	height:17px;
+}
+
+#ok {
+	width:29px;
+	height:17px;
+	margin-left: -31px;
+}
+
+#cancel {
+	width:49px;
+}
+
+#wallet_menu button {
+	width:48px;
 }

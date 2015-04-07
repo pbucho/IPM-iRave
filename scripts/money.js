@@ -60,3 +60,36 @@ function printPinChars(){
 	
 	document.getElementById("pin_space").innerHTML = output;
 }
+
+function printFinalBalance()
+{
+	var result;
+	var output;
+	var message = "Balanço final: €";
+
+	var purchase = document.getElementById("purchase_amount").innerHTML;
+
+	purchase = purchase.split("€");
+
+	result = balance - parseFloat(purchase[1]).toFixed(2);
+
+	output = message.concat(result);
+
+
+	//alert(purchase);	
+	document.getElementById("final_balance").innerHTML = output;
+}
+
+function printCost()
+{
+	var output;
+	var euro = " €";
+	var result = Math.random();
+	
+	result *= 15;
+	result = result.toFixed(2);
+
+	output = euro.concat(result);
+
+	document.getElementById("purchase_amount").innerHTML = output;
+}

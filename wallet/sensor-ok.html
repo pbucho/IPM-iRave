@@ -12,6 +12,7 @@
 			function initialize(){
 				clockRoutine();
 				printBalance();
+				printCost();
 			}
 		</script>
 	</head>
@@ -19,13 +20,10 @@
 		<div style="float: left">Saldo: &#8364; <span id="balance"></span></div>
 		<div style="float: right" id="clock"></div><br>
 		<div style="float: left">
-			A sua compra:
-			<ul>
-				<li>Produtos:</li>
-				<ul>
-					<li>Sublista?</li>
-				</ul>
-				<li><b>Total:</b> €3.00</li>
+			<ul id="sensor-ok_list">
+				
+				<li><b>Total:<span id="purchase_amount"></span></b></li>
+				<li><p id="final_balance"></p></li>
 			</ul>
 		</div>
 		<div style="float: right">
@@ -34,6 +32,8 @@
 		</div>
 		<script>
 			initialize()
+
+			printFinalBalance()
 		</script>
 	</body>
 </html>
