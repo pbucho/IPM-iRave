@@ -8,11 +8,7 @@
 		<script src="../scripts/time.js"></script>
 		<script src="../scripts/money.js"></script>
 		<!-- TIME IS MONEY -->
-		<script>
-			function initialize(){
-				clockRoutine();
-			}
-			
+		<script>			
 			function checkPinAndProceed(toHere){
 				var ok = checkEnteredPin();
 	
@@ -28,6 +24,11 @@
 													},
 													1000);
 				}
+			}
+			
+			function initialize(){
+				clockRoutine();
+				document.getElementById("ok").onclick = function(){checkPinAndProceed('completion_screen.html?balance=' + balance)};
 			}
 		</script>
 	</head>
@@ -102,14 +103,14 @@
 					</button>
 				</td>
 				<td>
-					<button id="ok" onclick="checkPinAndProceed('completion_screen.html')">
+					<button id="ok">
 						OK
 					</button>
 				</td>
 			</tr>
 		</table>
 		<script>
-			initialize()
+			initialize();
 		</script>
 	</body>
 </html>

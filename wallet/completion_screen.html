@@ -11,6 +11,7 @@
 		function initialize(){
 				clockRoutine();
 				printBalance();
+				document.getElementById("novo").onclick = function(){goToThis("pay.html?balance=" + balance)};
 			}
 		</script>
 		<style>
@@ -31,6 +32,7 @@
 
 		<p id="msg">Pagamento efectuado com sucesso!</p>
 
+		<button id="novo" onclick="goToThis('pay.html')">Novo pagamento</button>
 		<button id="voltar" onclick="goToThis('../start-iRave.html')">Voltar</button>
 
 		<script>

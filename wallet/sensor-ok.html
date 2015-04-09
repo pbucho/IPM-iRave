@@ -13,6 +13,7 @@
 				clockRoutine();
 				printBalance();
 				printCost();
+				printFinalBalance();
 			}
 		</script>
 	</head>
@@ -28,12 +29,18 @@
 		</div>
 		<div style="float: right">
 			<button onclick="goToThis('wallet.html')">Cancelar</button>
-			<button onclick="goToThis('pin.html')">OK</button>
+			<!--<button onclick="goToThis('pin.html')">OK</button>-->
+			<!--<form method="GET" action="pin.html">
+				<input type="hidden" name="balance" id="final_balance_get">
+				<input type="submit" value="OK">
+			</form>-->
+			<button id="ok">
+				OK
+			</button>
 		</div>
 		<script>
-			initialize()
-
-			printFinalBalance()
+			initialize();
+			document.getElementById("ok").onclick = function(){goToThis('pin.html?balance=' + finalBal)};
 		</script>
 	</body>
 </html>

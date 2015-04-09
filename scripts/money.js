@@ -1,7 +1,22 @@
-var balance = 150;
+var balance;
+var finalBal;
 var pin = 1234;
 var enteredPin = "";
 var pinChars = 0;
+var getVars = getUrlVars();
+
+if(getVars['balance'] == null)
+	balance = 150;
+else
+	balance = getVars['balance'];
+
+function getUrlVars(){
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
+        vars[key] = value;
+    });
+    return vars;
+}
 
 function printBalance(){
 	var output = balance;
@@ -72,6 +87,7 @@ function printFinalBalance()
 	purchase = purchase.split("€");
 
 	result = balance - parseFloat(purchase[1]).toFixed(2);
+	finalBal = result;
 
 	output = message.concat(result);
 
