@@ -13,6 +13,9 @@
 	font-family: Roboto;
 	font-size: 6.5pt;
 }
+*::-webkit-scrollbar {
+	width: 0 !important;
+}
 #clock{
 	text-align: center;
 	margin: -5%;

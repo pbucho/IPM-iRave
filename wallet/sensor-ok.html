@@ -27,17 +27,15 @@
 				<li><p id="final_balance"></p></li>
 			</ul>
 		</div>
-		<div style="float: right">
-			<button onclick="goToThis('wallet.html')">Cancelar</button>
-			<!--<button onclick="goToThis('pin.html')">OK</button>-->
-			<!--<form method="GET" action="pin.html">
-				<input type="hidden" name="balance" id="final_balance_get">
-				<input type="submit" value="OK">
-			</form>-->
-			<button id="ok">
-				OK
-			</button>
-		</div>
+		<button onclick="goToThis('wallet.html')" style="float: left">Cancelar</button>
+		<!--<button onclick="goToThis('pin.html')">OK</button>-->
+		<!--<form method="GET" action="pin.html">
+			<input type="hidden" name="balance" id="final_balance_get">
+			<input type="submit" value="OK">
+		</form>-->
+		<button id="ok" style="float: right">
+			OK
+		</button>
 		<script>
 			initialize();
 			document.getElementById("ok").onclick = function(){goToThis('pin.html?balance=' + finalBal)};
