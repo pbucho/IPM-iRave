@@ -13,18 +13,25 @@
 				color: white;
 			}
 			#clock{
+				float: left;
 				font-size: 14pt;
 				margin-bottom: 2px;
+				clear: both;
+			}
+			#time 
+			{
+			        font-size: 14pt;
+			        margin-left: 1.5em;
 			}
 		</style>
 	</head>
 	<body onclick="goToThis('start-iRave.html')">
-		<div style="text-align: center; font-size: 20pt; vertical-align: middle;">
+		<div style="text-align: center; font-size: 20pt; vertical-align: middle; margin-left: 0.25em;  ">
 			<div id="clock"></div>
 
-			<div style="font-size: 9pt">
+			<div style=" font-size: 9pt; padding-top:3.5em; margin-left:0em; padding-right: 1.2em;">
 				<p></p><!-- para dar um espaço menor que um <br> -->
-				Tocar para desbloquear
+				Tocar para <p style="font-size: 9pt; margin-top: 0em; margin-left:1em;">desbloquear</p>
 			</div>
 		</div>
 		<script>writeClock(true)</script>

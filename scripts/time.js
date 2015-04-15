@@ -15,7 +15,7 @@ function writeClock(longdt){
 	if(longdt)
 		year = addLeadingZero(now.getFullYear());
 
-	var output = hour + ":" + minute + "<br>" + day + "-" + month;
+	var output = "<span id='time'>" + hour + ":" + minute + "</span>" + "<br>" + day + "-" + month;
 	
 	if(longdt)
 		output += "-" + year;
