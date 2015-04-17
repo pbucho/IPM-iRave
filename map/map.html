@@ -15,21 +15,49 @@
 		</script>
 		
 		<style>
-		
+		        #title {
+			font-weight: bold;
+			font-family: "Helvetica", Sans-Serif;
+			font-size: 9px;
+			}
+		        button {
+			height:3.2em;
+			float:left;
+			width:5.4em;
+		        }
+		        button p {
+			margin-top:-0.3em;
+			margin-left:-0.1em;
+		        }
+		        button span {
+			margin-left:-0.1em;
+		        }
+		        #voltar {
+			height:2em;
+			margin:0.2em 2.2em 0em 2.2em;
+		        }
+		        
 		
 		</style>
 		
-	</head>
-	<body>
-	      
-	    
-		
-	      <div style="float: right" id="clock">
-	      </div>
+        </head>
+        <!-- TODO:POR O TAMANHO DA LETRA NO RELOGIO IGUAL AO DOS OUTROS.-->
+        <body>
+	<span id="title">Mapa</span>
 	  
-	        
-	        <script>
-		initialize();
-	        </script>
-	</body>
+	
+	<div style="float: right" id="clock">
+	</div>
+	      
+	<div style="margin-top:1.5em; font-size:8px;">
+	        <button onclick="goToThis('map_empty.html')" style="width:4.4em;">Mapa<p>Vazio</p></button>
+	        <button onclick="goToThis('friend_selection.html')" ><span>Localizar<p>Amigos</p><span></button>
+	</div>
+	<div>
+	        <button id="voltar" onclick="goToThis('../start-iRave.html')">Voltar</button>
+	</div>
+	<script>
+	        initialize();
+	</script>
+        </body>
 </html>
