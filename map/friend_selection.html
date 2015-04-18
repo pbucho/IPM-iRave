@@ -18,6 +18,16 @@
 			font-family: "Helvetica", Sans-Serif;
 			font-size: 9px;
 			}
+		.ui-widget {
+			
+		}
+		#form {
+			margin-top:1.6em;
+		}
+		input {
+			padding-top:0.6em;
+			
+		}
 		</style>
 		
         </head>
@@ -26,12 +36,25 @@
 	
 	<div style="float: right" id="clock">
 	</div>
-	
-	<div id="body">
+	<div id="form">
+	        <form action="">
+		<input type="checkbox" name="friends" value="first">
+		<label for="check" class="ui-widget">First Guy</label><br>
+		<input type="checkbox" name="friends" value="second">
+		<label for="check" class="ui-widget">Second Guy</label><br>
+		<input type="checkbox" name="friends" value="third">
+		<label for="check" class="ui-widget">Third Guy</label><br>
+		<input type="checkbox" name="friends" value="fourth">
+		<label for="check" class="ui-widget">Fourth Guy</label>
+		
+	        </form>
 	</div>
-	  
+	
+	
 	<script>
 	        initialize();
+	        
+	        
 	</script>
         </body>
 </html>
