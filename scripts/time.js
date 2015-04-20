@@ -4,7 +4,7 @@ function addLeadingZero(to_this){
 	return to_this;
 }
 
-function writeClock(longdt){
+/*function writeClock(longdt){
 	now = new Date();
 
 	hour = addLeadingZero(now.getHours());
@@ -19,6 +19,28 @@ function writeClock(longdt){
 	
 	if(longdt)
 		output += "-" + year;
+	document.getElementById("clock").innerHTML = output;
+}*/
+
+function writeClock(longdt){
+	now = new Date();
+
+	hour = addLeadingZero(now.getHours());
+	minute = addLeadingZero(now.getMinutes());
+	
+	if(longdt){
+		day = addLeadingZero(now.getDate());
+		month = addLeadingZero(now.getMonth() + 1);
+	}
+	
+	if(longdt)
+		year = addLeadingZero(now.getFullYear());
+
+	var output = "<span id='time'>" + hour + ":" + minute + "</span>";// + "<br>" + day + "-" + month;
+	
+	if(longdt){
+		output += "<br>" + day + "-" + month + "-" + year;
+	}
 	document.getElementById("clock").innerHTML = output;
 }
 
