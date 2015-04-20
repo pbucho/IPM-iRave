@@ -28,11 +28,15 @@
 			padding-top:0.6em;
 			
 		}
+		#submit
+		{
+			margin-left:1.2em;
+		}
 		</style>
 		
         </head>
         <body>
-	<span id="title">Seleção de Amigos</span>
+	<span id="title">Seleção<br>de Amigos</span>
 	
 	<div style="float: right" id="clock">
 	</div>
@@ -46,9 +50,12 @@
 		<label for="check" class="ui-widget">Third Guy</label><br>
 		<input type="checkbox" name="friends" value="fourth">
 		<label for="check" class="ui-widget">Fourth Guy</label>
-		
+		<!-- botao para adicionar novo amigo -->
 	        </form>
 	</div>
+	
+	<br>
+	<button id="submit" onclick="goToThis('map_friends.html')">Ver no mapa</button>
 	
 	
 	<script>

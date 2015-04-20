@@ -25,8 +25,13 @@
 		<div style="float: left">Saldo: &#8364; <span id="balance"></span></div>
 		<div style="float: right" id="clock"></div><br>
 		
+		<p>Encoste o iRave ao sensor</p>
+		<p style="text-align: right">A aguardar...<br></p>
+		<p style="text-align: right; margin-top: -3.5%"><button onclick="goToThis('wallet.html')">Cancelar</button></p>
+		
 		<script>
 			initialize()
+			waitBeforeGo(1, "confirm_deposit.html");
 		</script>
 	</body>
 </html>

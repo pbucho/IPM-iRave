@@ -13,6 +13,9 @@
 	font-family: Roboto;
 	font-size: 6.5pt;
 }
+th {
+        font-weight:bold;
+}
 *::-webkit-scrollbar {
 	width: 0 !important;
 }
@@ -67,4 +70,7 @@ ul > li{
   width: 100%;
   z-index: 10;
   background-color: rgba(0,0,0,0.5);
+}
+#title {
+        font-weight:bold;
 }
