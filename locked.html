@@ -7,32 +7,36 @@
 		<script src="scripts/time.js"></script>
 		<script src="scripts/funcs.js"></script>
 		<style>
-			body{
+			#body{
 				font-family: Roboto;
 				background-color: black;
 				color: white;
 			}
 			#clock{
-				float: left;
+				/*float: left;*/
 				font-size: 14pt;
-				margin-bottom: 2px;
-				clear: both;
+				/*margin-bottom: 2px;
+				clear: both;*/
 			}
 			#time 
 			{
-			        font-size: 14pt;
-			        margin-left: 1.5em;
+			        /*font-size: 14pt;
+			        margin-left: 1.5em;*/
 			}
 		</style>
 	</head>
 	<body onclick="goToThis('start-iRave.html')">
-		<div style="text-align: center; font-size: 20pt; vertical-align: middle; margin-left: 0.25em;  ">
+		<!--<div style="text-align: center; font-size: 20pt; vertical-align: middle">
 			<div id="clock"></div>
 
 			<div style=" font-size: 9pt; padding-top:3.5em; margin-left:0em; padding-right: 1.2em;">
 				<p></p><!-- para dar um espaço menor que um <br> -->
-				Tocar para <p style="font-size: 9pt; margin-top: 0em; margin-left:1em;">desbloquear</p>
+				<!--Tocar para <p style="font-size: 9pt; margin-top: 0em; margin-left:1em;">desbloquear</p>
 			</div>
+		</div>-->
+		<div style="text-align: center">
+			<div id="clock" style="font-size: 12pt"></div>
+			<p style="font-size: 8pt">Tocar para desbloquear</p>
 		</div>
 		<script>writeClock(true)</script>
 	</body>

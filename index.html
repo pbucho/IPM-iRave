@@ -10,8 +10,22 @@
 				nwWindow = window.open("start-iRave.html", "iRave", strWindowFeatures );
 			}
 		</script>
+		<style>
+			body{
+				background-image: url("images/wrist.jpg");
+				background-size: 48% 200%;
+				background-position: 65% 13%;
+				background-repeat: no-repeat;
+				/*background-size: cover;*/
+			}
+		</style>
 	</head>
 	<body>
-		<button onclick="startIRave()">Ligar iRave</button>
+		<!--<button onclick="startIRave()">Ligar iRave</button>-->
+		<div style="text-align: center">
+			<p style="font-size: 20pt"><b>iRave</b></p>
+			<p>&nbsp;</p>
+			<iframe src="start-iRave.html" height="95" width="122"></iframe>
+		</div>
 	</body>
 </html>

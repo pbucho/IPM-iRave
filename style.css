@@ -4,10 +4,10 @@
 	src: url("fonts/Roboto-Regular.ttf");
 }
 #clock{
-		float: right;
+		/*float: right;*/
 		border:1px solid black;
 		border-radius:4px;
-		width:24px;
+		/*width:24px;*/
 }
 *{
 	font-family: Roboto;
@@ -16,12 +16,15 @@
 *::-webkit-scrollbar {
 	width: 0 !important;
 }
-
+body{
+	background-color: white;
+	background-image: url("images/backgnd.jpg");
+}
 #clock{
 	border:1px solid black;
 	border-radius: 4px;
 	text-align: center;
-	margin: -5%;
+	/*margin: -5%;*/
 }
 ul > li{
 	margin-left: -40%;
@@ -54,4 +57,14 @@ ul > li{
 
 #wallet_menu button {
 	width:48px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  background-color: rgba(0,0,0,0.5);
 }
