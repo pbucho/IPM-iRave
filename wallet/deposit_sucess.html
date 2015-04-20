@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="pt">
+	<head>
+		<title>iRave</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../style.css">
+		<script src="../scripts/funcs.js"></script>
+		<script src="../scripts/time.js"></script>
+		<script src="../scripts/money.js"></script>
+		<script>
+		function initialize(){
+				clockRoutine();
+				document.getElementById("novo").onclick = function(){goToThis("pay.html?balance=" + balance)};
+			}
+		</script>
+		<style>
+			#voltar {
+				margin-left: 30px;
+			
+				margin-top:5px;
+			}
+			#msg {
+				padding-top: 10px;
+				clear:both;
+			}
+			#clock {
+				margin-top:-1.2em;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="title">Sucesso!</div>
+		<div style="float: right" id="clock"></div>
+
+		<p id="msg">Carregamento de <b>50€</b> efectuado com sucesso!</p>
+
+		<!--<button id="novo" onclick="goToThis('pay.html')">Novo pagamento</button>-->
+		<button id="voltar" onclick="goToThis('../start-iRave.html')">Voltar</button>
+
+		<script>
+			initialize();
+		</script>
+	</body>
+
+</html>

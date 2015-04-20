@@ -4,9 +4,9 @@ function goToThis(page){
 
 function waitBeforeGo(timeSec, url){
 	setInterval(function(){
-							location.assign(url)
-							},
-							timeSec * 1000);
+	        location.assign(url)
+	        },
+	        timeSec * 1000);
 }
 
 function changeBgColor(color) {

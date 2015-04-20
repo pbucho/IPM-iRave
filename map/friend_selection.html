@@ -23,6 +23,9 @@
 		}
 		#form {
 			margin-top:1.6em;
+			border:1px solid black;
+			border-radius:5px;
+			height:12em;
 		}
 		input {
 			padding-top:0.6em;
@@ -31,6 +34,13 @@
 		#submit
 		{
 			margin-left:1.2em;
+			height:3em;
+			
+		}
+		#adicionar {
+			margin-left:0.5em;
+			margin-top:0.5em;
+			text-decoration:underline;
 		}
 		</style>
 		
@@ -52,10 +62,11 @@
 		<label for="check" class="ui-widget">Fourth Guy</label>
 		<!-- botao para adicionar novo amigo -->
 	        </form>
+	        <button id="adicionar" onclick="goToThis('map_friends.html')">Adicionar</button>
 	</div>
 	
 	<br>
-	<button id="submit" onclick="goToThis('map_friends.html')">Ver no mapa</button>
+	<button id="submit" onclick="goToThis('.html')">Ver no mapa</button>
 	
 	
 	<script>
