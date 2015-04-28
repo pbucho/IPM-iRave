@@ -6,30 +6,38 @@
 		<link rel="stylesheet" type="text/css" href="../style.css">
 		<script src="../scripts/funcs.js"></script>
 		<script src="../scripts/time.js"></script>
-		<script src="../scripts/jqueryUI/jquery-ui.js"></script>
-		<script src="../scripts/jqueryUI/external/jquery/jquery.js"></script>		<script>
+		<script>
 		        function initialize(){
 				clockRoutine();
 			}
 		</script>
 		
 		<style>
+		#clock {
+			margin-top:-1em;
+		}
 		#title {
 			font-family: "Helvetica", Sans-Serif;
 			font-size: 9px;
 			}
 		.ui-widget {
-			
+			font-weight:bold;
 		}
 		#form {
 			margin-top:1.6em;
-			border:1px solid black;
+			border:3px solid black;
 			border-radius:5px;
 			height:12em;
+			
 		}
 		input {
 			padding-top:0.6em;
 			
+		}
+		#voltar {
+			margin-top:-0.6em;
+			margin-left:2.6em;
+			margin-bottom:0.5em;
 		}
 		#submit
 		{
@@ -62,12 +70,12 @@
 		<label for="check" class="ui-widget">Fourth Guy</label>
 		<!-- botao para adicionar novo amigo -->
 	        </form>
-	        <button id="adicionar" onclick="goToThis('map_friends.html')">Adicionar</button>
+	        <button id="adicionar" onclick="goToThis('add_friend.html')">Adicionar</button>
 	</div>
-	
+	<br>
+	<button id="voltar" onclick="goToThis('map.html')">Voltar</button>
 	<br>
 	<button id="submit" onclick="goToThis('map_empty.html')">Ver no mapa</button>
-	
 	
 	<script>
 	        initialize();
