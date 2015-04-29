@@ -18,7 +18,10 @@
 			font-size: 9px;
 			}
 		#username_input {
-			width:10em;
+			margin-top:0.6em;
+			margin-left:0.2em;
+			width:7.5em;
+			float:left;
 		}
 		#clock {
 			margin-top:-1em;
@@ -26,11 +29,15 @@
 		#keyboard_space {
 			border:1px solid black;
 			width:4em;
-			margin-left:auto;
+			margin-left:-0.5em;
 			margin-right:auto;
 			border-radius:0.3em;
+			margin-bottom:-1.5em;
 		} 
-
+		#non-alpha {
+			width:8em;
+			margin-right:-0.5em;
+		}
 		</style>
 		
         </head>
@@ -43,23 +50,23 @@
 	<br>
 	        Nome de utilizador do amigo: 
 	        <input id="username_input" type="text" name="username"><br>
-
+	        <button style="width:2em;margin-top:0.6em;margin-left:0.2em;" onclick="addToEnteredPin(9)">&gt;</button>
 	        
 	        <div id="pin_space" style="text-align: center">&nbsp;</div>
 		<table id="pin" border="0" style="border-spacing: 0px">
 			<tr>
 				<td>
-					<button class="numerical" onclick="addToEnteredPin(1)">
+					<button class="alpha" onclick="addToEnteredPin(1)">
 						A
 					</button>
 				</td>
 				<td>
-					<button class="numerical" onclick="addToEnteredPin(2)">
+					<button class="alpha" onclick="addToEnteredPin(2)">
 						B
 					</button>
 				</td>
 				<td>
-					<button class="numerical" onclick="addToEnteredPin(3)">
+					<button class="alpha" onclick="addToEnteredPin(3)">
 						C
 					</button>
 				</td>
@@ -71,17 +78,17 @@
 			</tr>
 			<tr>
 				<td>
-					<button class="numerical" onclick="addToEnteredPin(4)">
+					<button class="alpha" onclick="addToEnteredPin(4)">
 						D
 					</button>
 				</td>
 				<td>
-					<button class="numerical" onclick="addToEnteredPin(5)">
+					<button class="alpha" onclick="addToEnteredPin(5)">
 						E
 					</button>
 				</td>
 				<td>
-					<button class="numerical" onclick="addToEnteredPin(6)">
+					<button class="alpha" onclick="addToEnteredPin(6)">
 						F
 					</button>
 				</td>
@@ -93,22 +100,22 @@
 			</tr>
 			<tr>
 				<td>
-					<button class="numerical" onclick="addToEnteredPin(7)">
+					<button class="alpha" onclick="addToEnteredPin(7)">
 						H
 					</button>
 				</td>
 				<td>
-					<button class="numerical" onclick="addToEnteredPin(8)">
+					<button class="alpha" onclick="addToEnteredPin(8)">
 						I
 					</button>
 				</td>
 				<td>
-					<button class="numerical" onclick="addToEnteredPin(9)">
+					<button class="alpha" onclick="addToEnteredPin(9)">
 						J
 					</button>
 				</td>
 				<td>
-					<button class="numerical" onclick="addToEnteredPin(9)">
+					<button class="alpha" onclick="addToEnteredPin(9)">
 						L
 					</button>
 				</td>
@@ -120,81 +127,93 @@
 			</tr>
 			<tr>
 				<td>
-					<button class="numerical" onclick="addToEnteredPin(9)">
+					<button class="alpha" onclick="addToEnteredPin(9)">
 						M
 					</button>
 				</td>
 				<td>
-					<button class="numerical" onclick="addToEnteredPin(9)">
+					<button class="alpha" onclick="addToEnteredPin(9)">
 						N
 					</button>
 				</td><td>
-					<button class="numerical" onclick="addToEnteredPin(9)">
+					<button class="alpha" onclick="addToEnteredPin(9)">
 						O
 					</button>
 				</td>
 				<td>
-					<button class="numerical" onclick="addToEnteredPin(9)">
+					<button class="alpha" onclick="addToEnteredPin(9)">
 						P
 					</button>
 				</td>
 				<td>
-					<button style="margin-left:-3.8em;" class="numerical" onclick="addToEnteredPin(9)">
+					<button style="margin-left:-3.8em;" class="alpha" onclick="addToEnteredPin(9)">
 						Q
 					</button>
 				</td>
+			</tr>
+			<tr>
 				<td>
-					<button style="margin-left:-1.8em;" class="numerical" onclick="addToEnteredPin(9)">
+					<button class="alpha" onclick="addToEnteredPin(9)">
+						R
+					</button>
+				</td>
+				<td>
+					<button class="alpha" onclick="addToEnteredPin(9)">
+						S
+					</button>
+				</td>
+				<td>
+					<button class="alpha" onclick="addToEnteredPin(9)">
+						T
+					</button>
+				</td>
+				<td>
+					<button class="alpha" onclick="addToEnteredPin(9)">
+						U
+					</button>
+				</td>
+				<td>
+					<button style="margin-left:-3.8em;" class="alpha" onclick="addToEnteredPin(9)">
 						V
 					</button>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<button class="numerical" onclick="addToEnteredPin(9)">
-						R
+					<button class="alpha" onclick="addToEnteredPin(9)">
+						X
 					</button>
 				</td>
 				<td>
-					<button class="numerical" onclick="addToEnteredPin(9)">
-						S
+					<button class="alpha" onclick="addToEnteredPin(9)">
+						W
 					</button>
 				</td>
 				<td>
-					<button class="numerical" onclick="addToEnteredPin(9)">
-						T
+					<button class="alpha" onclick="addToEnteredPin(9)">
+						Y
 					</button>
 				</td>
 				<td>
-					<button class="numerical" onclick="addToEnteredPin(9)">
-						U
+					<button class="alpha" onclick="addToEnteredPin(9)">
+						Z
+					</button>
+				</td>
+				<td>
+					<button style="margin-left:-3.8em;" class="alpha symbol" onclick="addToEnteredPin(9)">
+						-
 					</button>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<button class="numerical" onclick="addToEnteredPin(9)">
-						X
+					<button style="" class="alpha symbol" onclick="addToEnteredPin(9)">
+						_
 					</button>
 				</td>
 				<td>
-					<button class="numerical" onclick="addToEnteredPin(9)">
-						W
-					</button>
-				</td>
-				<td>
-					<button class="numerical" onclick="addToEnteredPin(9)">
-						Y
-					</button>
-				</td>
-				<td>
-					<button class="numerical" onclick="addToEnteredPin(9)">
-						Z
-					</button>
-				</td>
-				<td>
-					<button class="non-alpha" id="ok">
-						OK
+					<button style="" class="alpha symbol" onclick="addToEnteredPin(9)">
+						.
 					</button>
 				</td>
 			</tr>
