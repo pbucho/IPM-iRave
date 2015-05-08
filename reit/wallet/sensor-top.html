@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang="pt">
+	<head>
+		<title>iRave</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../style.css">
+		<script src="../scripts/funcs.js"></script>
+		<script src="../scripts/time.js"></script>
+		<script src="../scripts/cookies.js"></script>
+		<script src="../scripts/money.js"></script>
+		<!-- TIME IS MONEY -->
+		<script>
+			var prodNames = ["Água","Um Bongo","Super Bock","Sangria"];
+			var prodPrices = [0.50, 1.20, 0.40, 0.50];
+			var prodPics = ["../images/agua.jpg","../images/bongo.jpg","../images/sbock.jpg","../images/sangria.jpg"];
+			
+			var allow = false;
+			
+			function selectProduct(){
+				var item = Math.floor((Math.random() * 4));
+				var finalCost = getCorrectBalance() - prodPrices[item];
+				
+				document.getElementById("product_pic").src = prodPics[item];
+				//document.getElementById("product_name").innerHTML = prodNames[item];
+				//document.getElementById("purchase_amount").innerHTML = prodPrices[item] + "&euro;";
+				if(finalCost < 0){
+					document.getElementById("final_balance").innerHTML = "<span style='color: red'>Saldo insuficiente</span>";
+					//document.getElementById("pref").innerHTML = "<span style='color: red'>Saldo insuficiente</span>";
+				}else{
+					//document.getElementById("final_balance").innerHTML = finalCost + "&euro;";
+					allow = true;
+				}
+				document.getElementById("product_price").innerHTML = prodPrices[item];
+			}
+			
+			function allowProceed(){
+				if(allow)
+					goToThis("pin.html");
+				else
+					console.log("NO!");
+			}
+		
+			function initialize(){
+				clockRoutine();
+				getCorrectBalance();
+				printBalance();
+				selectProduct();
+			}
+		</script>
+	</head>
+	<body>
+		<div style="float: left">Saldo: <span id="balance"></span></div>
+		<div style="float: right" id="clock"></div><br>
+		<!--<div style="float: left">
+			<ul>
+				<li>Produto: <span id="product_name"></span></li>
+				<li>Custo total: <span id="purchase_amount"></span></li>
+				<li id="pref">Saldo final: <span id="final_balance"></span></li>
+			</ul>
+		</div>-->
+		<img id="product_pic" src="images/cartaz.png" width="60" height="40">
+		<br>
+		<center><div id="final_balance" style="display: inline; text-align: center; margin: 0 auto"></div></center>
+		<div style="text-align: center; margin: 0 auto">
+			<img style="float: left" src="../images/back.png" width="10" height="10" onclick="goToThis('wallet.html')">
+			<div style="display: inline">Preço: <span id="product_price"></span> &euro;</div>
+			<img style="float: right" src="../images/ok.png" width="10" height="10" onclick="allowProceed()">
+		</div>
+		<script>
+			initialize();
+			//document.getElementById("ok").onclick = function(){goToThis('pin.html?balance=' + finalBal)};
+		</script>
+	</body>
+</html>

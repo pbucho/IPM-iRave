@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="pt">
+	<head>
+		<title>iRave</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../style.css">
+		<script src="../scripts/funcs.js"></script>
+		<script src="../scripts/time.js"></script>
+		<script src="../scripts/cookies.js"></script>
+		<script src="../scripts/money.js"></script>
+		<!-- TIME IS MONEY -->
+		<script>
+			function initialize(){
+				clockRoutine();
+				getCorrectBalance();
+				printBalance();
+			}
+		</script>
+	</head>
+	<body>
+		<div style="float: left">Saldo: <span id="balance"></span></div>
+		<div style="float: right" id="clock"></div><br>
+		<!--<div>-->
+			<input type="number" id="inteiro" style="width: 50%">,<input type="number" id="decimal" style="width: 50%">
+			<img style="float: left; display: inline" src="../images/back.png" width="10" height="10" onclick="goToThis('wallet.html')">
+		<!--</div>-->
+		<script>
+			initialize();
+		</script>
+	</body>
+</html>

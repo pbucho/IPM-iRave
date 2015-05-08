@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="pt">
+	<head>
+		<title>iRave</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../style.css">
+		<script src="../scripts/funcs.js"></script>
+		<script src="../scripts/time.js"></script>
+		<script src="../scripts/cookies.js"></script>
+		<script src="../scripts/money.js"></script>
+		<!-- TIME IS MONEY -->
+		<script>
+			function initialize(){
+				clockRoutine();
+				getCorrectBalance();
+				printBalance();
+			}
+		</script>
+	</head>
+	<body>
+		<div style="float: left">Saldo: <span id="balance"></span></div>
+		<div style="float: right" id="clock"></div><br>
+		<!--<div>-->
+			<p style="float: left">Encoste o iRave ao sensor</p>
+			<center><img src="../images/spinner.gif" width="25" height="25"></center>
+			<!--<p style="text-align: right; margin-top: -3.5%"><button onclick="goToThis('wallet.html')">Cancelar</button></p>-->
+			<img style="float: left; display: inline" src="../images/back.png" width="10" height="10" onclick="goToThis('wallet.html')">
+		<!--</div>-->
+		<script>
+			initialize();
+			waitBeforeGo(3, "sensor-top.html");
+		</script>
+	</body>
+</html>
