@@ -21,13 +21,9 @@
 				var finalCost = getCorrectBalance() - prodPrices[item];
 				
 				document.getElementById("product_pic").src = prodPics[item];
-				//document.getElementById("product_name").innerHTML = prodNames[item];
-				//document.getElementById("purchase_amount").innerHTML = prodPrices[item] + "&euro;";
 				if(finalCost < 0){
 					document.getElementById("final_balance").innerHTML = "<span style='color: red'>Saldo insuficiente</span>";
-					//document.getElementById("pref").innerHTML = "<span style='color: red'>Saldo insuficiente</span>";
 				}else{
-					//document.getElementById("final_balance").innerHTML = finalCost + "&euro;";
 					allow = true;
 				}
 				document.getElementById("product_price").innerHTML = prodPrices[item];

@@ -80,3 +80,9 @@ ul > li{
 #title {
         font-weight:bold;
 }
+
+.pin_button{
+	border:1px solid black;
+	border-radius: 4px;
+	text-align: center;
+}

@@ -12,6 +12,7 @@
 		<!-- TIME IS MONEY -->
 		<script>
 			function goTopUp(){
+				var meses = ["Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez"];
 				var inteiro = document.getElementById("inteiro").value;
 				
 				if(inteiro == "")
@@ -22,6 +23,14 @@
 				if(inteiro > 0){
 					addToBalance(inteiro);
 					printBalance();
+					
+					var trans = readCookie("transactions");
+					var now = new Date();
+					if(trans != "VOID")
+						trans += ";" + inteiro + "$" + now.getDate() + "-" + meses[now.getMonth()];
+					else
+						trans = inteiro + "$" + now.getDate() + "-" + meses[now.getMonth()];
+					updateCookie("transactions",trans);
 					goToThis("carregado.html");
 				}else{
 					document.getElementById("error").innerHTML = "Valor inválido";

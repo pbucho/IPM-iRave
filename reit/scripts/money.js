@@ -23,6 +23,12 @@ function addToBalance(value){
 	var bbal = parseFloat(balance);
 	bbal += parseFloat(value);
 	balance = parseFloat(bbal);
+	var dec = String(balance - Math.floor(balance));
+	var phonix = dec.lenght;
+	if(phonix > 4){
+		dec = dec.substr(0,4);
+		console.log("I wish that I could be like the cookies");
+	}
 	updateCookie("balance",balance);
 }
 

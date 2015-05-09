@@ -21,23 +21,22 @@
 				var finalCost = getCorrectBalance() - prodPrices[item];
 				
 				document.getElementById("product_pic").src = prodPics[item];
-				//document.getElementById("product_name").innerHTML = prodNames[item];
-				//document.getElementById("purchase_amount").innerHTML = prodPrices[item] + "&euro;";
 				if(finalCost < 0){
 					document.getElementById("final_balance").innerHTML = "<span style='color: red'>Saldo insuficiente</span>";
-					//document.getElementById("pref").innerHTML = "<span style='color: red'>Saldo insuficiente</span>";
+					var okok = document.getElementById("proceed_button");
+					okok.parentNode.removeChild(okok);
 				}else{
-					//document.getElementById("final_balance").innerHTML = finalCost + "&euro;";
 					allow = true;
 				}
 				document.getElementById("product_price").innerHTML = prodPrices[item];
+				updateCookie("transaction_value",prodPrices[item]);
 			}
 			
 			function allowProceed(){
 				if(allow)
 					goToThis("pin.html");
 				else
-					console.log("NO!");
+					goToThis("wallet.html");
 			}
 		
 			function initialize(){
@@ -64,7 +63,7 @@
 		<div style="text-align: center; margin: 0 auto">
 			<img style="float: left" src="../images/back.png" width="10" height="10" onclick="goToThis('wallet.html')">
 			<div style="display: inline">Preço: <span id="product_price"></span> &euro;</div>
-			<img style="float: right" src="../images/ok.png" width="10" height="10" onclick="allowProceed()">
+			<img id="proceed_button" style="float: right" src="../images/ok.png" width="10" height="10" onclick="allowProceed()">
 		</div>
 		<script>
 			initialize();

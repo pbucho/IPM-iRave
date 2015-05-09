@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="pt">
+	<head>
+		<title>iRave</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../style.css">
+		<script src="../scripts/funcs.js"></script>
+		<script src="../scripts/time.js"></script>
+		<script src="../scripts/cookies.js"></script>
+		<script src="../scripts/money.js"></script>
+		<!-- TIME IS MONEY -->
+		<script>
+			function getTransactions(){
+				var trans = readCookie("transactions");
+				if(trans == "VOID"){
+					document.getElementById("trans").innerHTML = "Sem transacções a registar";
+					return;
+				}
+				
+				trans = trans.split(";");
+				var item;
+				for(i = 0; i < trans.length; i++){
+					item = trans[i].split("$");
+					document.getElementById("trans").innerHTML += "<tr><td>" + item[1] + "</td><td>" + item[0] + "</td></tr>";
+				}
+			}
+		
+			function initialize(){
+				clockRoutine();
+				getCorrectBalance();
+				printBalance();
+				getTransactions();
+			}
+		</script>
+		<style>
+			#clock {
+				border: 1px solid black;
+				border-radius: 4px;
+			}
+ 		</style>
+	</head>
+	<body>
+		<div style="float: left">Saldo: <span id="balance"></span></div>
+		<div style="float: right" id="clock"></div><br>		
+		<table id="trans" border="0" style="margin-left: auto; margin-right: auto; text-align: center; table-layout: fixed; width: 100px">
+			<th>
+				<td>Data</td><td>Valor</td>
+			</th>
+		</table>
+		<img style="float: left; display: inline" src="../images/back.png" width="10" height="10" onclick="goToThis('wallet.html')">
+		<div style="display: inline; margin-left: auto; margin-right: auto; color: red" id="error">&nbsp;</div>
+		<script>
+			initialize();
+		</script>
+	</body>
+</html>

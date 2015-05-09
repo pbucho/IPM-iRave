@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang="pt">
+	<head>
+		<title>iRave</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../style.css">
+		<script src="../scripts/funcs.js"></script>
+		<script src="../scripts/time.js"></script>
+		<script src="../scripts/money.js"></script>
+		<!-- TIME IS MONEY -->
+		<script>			
+			function checkPinAndProceed(toHere){
+				var ok = checkEnteredPin();
+	
+				resetEnteredPin();
+				if(ok)
+					goToThis(toHere);
+				else{
+					printPinChars();
+					changeBgColor("red");
+					//document.getElementById("pin_err_sp").innerHTML = "PIN errado.";
+					intId = setInterval(function(){
+													changeBgColor("transparent");
+													clearInterval(intId);
+													},
+													1000);
+				}
+			}
+			
+			function initialize(){
+				clockRoutine();
+				document.getElementById("ok").onclick = function(){checkPinAndProceed('completion_screen.html')};
+			}
+		</script>
+		<style>
+			#pin_space {
+				border: 1px solid black;
+				width: 4em;
+				margin-left: auto;
+				margin-right: auto;
+				border-radius: 0.3em;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="float: right" id="clock"></div>
+		<span><b>Introduza o seu PIN:</b></span>
+		<div id="pin_space" style="text-align: center">&nbsp;</div>
+		<div>
+			<!--<div style="float: left; color: red; text-align: center; display: inline" id="pin_err_sp">&nbsp;</div>-->
+			<table id="pin" border="0" style="margin-left: auto; margin-right: auto; text-align: center; table-layout: fixed; width: 100px">
+				<tr>
+					<td class="pin_button" onclick="addToEnteredPin(1)">1</td><td class="pin_button" onclick="addToEnteredPin(2)">2</td><td class="pin_button" onclick="addToEnteredPin(3)">3</td><td class="pin_button" colspan="2" id="ok"><img src="../images/ok.png" width="10" height="10"></td>
+				</tr>
+				<tr>
+					<td class="pin_button" onclick="addToEnteredPin(4)">4</td><td class="pin_button" onclick="addToEnteredPin(5)">5</td><td class="pin_button" onclick="addToEnteredPin(6)">6</td><td class="pin_button" colspan="2" onclick="resetEnteredPin()"><img src="../images/edit-y.jpg" width="10" height="10"></td>
+				</tr>
+				<tr>
+					<td class="pin_button" onclick="addToEnteredPin(7)">7</td><td class="pin_button" onclick="addToEnteredPin(8)">8</td><td class="pin_button" onclick="addToEnteredPin(9)">9</td><td class="pin_button" onclick="addToEnteredPin(0)">0</td><td class="pin_button" onclick="goToThis('wallet.html')"><img src="../images/no.png" width="10" height="10"></td>
+			</table>
+		</div>
+		<script>
+			initialize();
+		</script>
+	</body>
+</html>
