@@ -19,6 +19,13 @@ function printBalance(){
 	document.getElementById("balance").innerHTML = output + " &euro;";
 }
 
+function addToBalance(value){
+	var bbal = parseFloat(balance);
+	bbal += parseFloat(value);
+	balance = parseFloat(bbal);
+	updateCookie("balance",balance);
+}
+
 function checkEnteredPin(){
 	if(enteredPin == pin)
 		return true;

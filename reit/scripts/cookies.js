@@ -25,7 +25,7 @@ function hasCookie(name){
 }
 
 function deleteCookie(name){
-	if(hasCookie(name))
+	if(!hasCookie(name))
 		return;
 	
 	var expdt = new Date(1970,2,1,0,0,0);
