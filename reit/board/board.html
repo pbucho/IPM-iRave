@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="pt">
+	<head>
+		<title>iRave</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../style.css">
+		<script src="../scripts/funcs.js"></script>
+		<script src="../scripts/time.js"></script>
+		<!-- TIME IS MONEY -->
+		<script>
+			var swipePos = 4;
+			var stages = ["Palco NOS","Palco Heineken","Palco NOS Clubbing","Jardim Caixa"];
+			var artists = [["Muse - 22h00","Alt-J - 23h00","Ben Harper &amp; The Innocent Criminals - 0h00"],["Metronomy - 22h00","Django Django - 23h00","Jessie Ware - 0h00"],["Tiga - 22h00","Ten Walls - 23h00","Julio Bashmore - 0h00"],["Herman José - 22h00","Francisco Menezes - 23h00","Rui Xará - 0h00"]];
+			
+			function swipeL(){
+				swipePos--;
+				if(swipePos < 1)
+					swipePos = 4;
+				printAfterSwipe();
+			}
+			
+			function swipeR(){
+				swipePos++;
+				if(swipePos > 4)
+					swipePos = 1;
+				printAfterSwipe();
+			}
+			
+			function printAfterSwipe(){
+				var len = artists[swipePos - 1].length;
+				document.getElementById("content").innerHTML = "<ul>";
+				for(i = 0; i < len; i++){
+					document.getElementById("content").innerHTML += "<li>" + artists[swipePos - 1][i] + "</li>";
+				}
+				document.getElementById("content").innerHTML += "</ul>";
+				document.getElementById("main_text").innerHTML = stages[swipePos - 1];
+			}
+		</script>
+	</head>
+	<body>
+		<div style="float: right" id="clock"></div>
+		<br>
+		<div id="content" style="line-height: 100%; margin: 0 auto"></div>
+		<div style="float: left; margin: 0 auto" onclick="swipeL()">&lt;&lt;</div>
+		<div style="display: inline" id="main_text" onclick="press()">Palco NOS</div>
+		<div style="float: right; margin-left: auto; margin-right: auto; bottom: 0px" onclick="swipeR()">&gt;&gt;</div>
+		<br>
+		<img style="float: left" src="../images/back.png" width="10" height="10" onclick="goToThis('../main.html')">
+		<script>
+			clockRoutine();
+			swipeR();
+		</script>
+	</body>
+</html>
