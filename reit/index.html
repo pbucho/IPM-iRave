@@ -3,16 +3,22 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>iRave</title>
-		<script>
-		</script>
+		<style>
+			body{
+				background-image: url("images/wrist.jpg");
+				background-size: 60% 400%;
+				background-position: 65% 13%;
+				background-repeat: no-repeat;
+			}
+			
+			#iRave {
+				overflow-x: auto;
+				border: 2px solid black;
+				border-radius: 10px;
+			}
+		</style>
 	</head>
 	<body>
-		<iframe style="overflow: hidden" scrolling="no" id="iRave" src="main.html" height="95" width="122" frameborder="1"></iframe>
-		<br>
-		<br>
-		<div>
-			<button id="swipe_l" style="float: left" onclick="swipeL()">&lt; Swipe</button>&nbsp;
-			<button id="swipe_r" style="float: right" onclick="swipeR()">Swipe &gt;</button>
-		</div>
+		<iframe id="iRave" style="overflow: hidden" scrolling="no" id="iRave" src="main.html" height="95" width="122" frameborder="0"></iframe>
 	</body>
 </html>
