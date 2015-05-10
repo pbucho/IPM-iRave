@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="pt">
+	<head>
+		<title>iRave</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../style.css">
+		<script src="../scripts/funcs.js"></script>
+		<script src="../scripts/time.js"></script>
+		<script>
+			function initialize(){
+			clockRoutine();
+			}
+		</script>
+		<style>
+			#title {
+				font-weight: bold;
+				font-family: "Helvetica", Sans-Serif;
+				font-size: 9px;
+			}
+			button {
+				height:3.2em;
+				float:left;
+				width:5.4em;
+			}
+			button p {
+				margin-top:-0.3em;
+				margin-left:-0.1em;
+			}
+			button span {
+				margin-left:-0.1em;
+			}
+			#voltar {
+				height:2em;
+				margin:0.2em 2.2em 0em 2.2em;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="float: right" id="clock"></div>
+		<br>
+		<div style="margin-top:1.5em; font-size:8px; margin-left: auto">
+			<!--<button onclick="goToThis('map_empty.html')" style="width:5em;">Mapa<p>Simples</p></button>
+			<button onclick="goToThis('friend_selection.html')" style="margin-left:0.05em;" ><span>Localizar<p>Amigos</p><span></button>-->
+			<p></p>
+			<div style="float: left" class="pin_button" onclick="goToThis('map_empty.html')">Mapa<br>Simples</div>
+			<div style="float: right" class="pin_button" onclick="goToThis('friend_selection.html')">Localizar<br>Amigos</div>
+		</div>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<img style="float: left" src="../images/back.png" width="10" height="10" onclick="goToThis('../main.html')">
+		<script>
+			initialize();
+		</script>
+	</body>
+</html>
