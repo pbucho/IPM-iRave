@@ -9,21 +9,39 @@
 		<script>
 			var swipePos = 1;
 			var imgArray = ["../images/cart.png","../images/record.png","../images/topup.png","../images/back.png"];
-			var textArray = ["Pagar","Consultar","Carregar","Voltar menu princ."];
+			var textArray = ["Pagar","Consultar","Carregar","Voltar"];
 			var linkArray = ["pay.html","check.html","topup.html","../main.html"];
 		</script>
 		<script src="../scripts/swipe.js"></script>
+		<style>
+			html, body {
+				background-color:white;
+			}
+			#container {
+				background-color:white;
+				height:9em;
+			}
+			#img{ 
+				margin-top:0.5em;
+			}
+			#main_logo {
+				margin:0 auto 0 auto;
+				display: block;
+			}	
+		</style>
 	</head>
 	<body>
-		<div style="float: left">Saldo: <span id="balance"></span></div>
+		<div id="container">
+		<div id="balance-div" style="float: left">Saldo: <span id="balance"></span></div>
 		<div style="float: right" id="clock"></div>
 		<br>
+		<div id="img">
 		<img style="text-align: center; margin: 0 auto" id="main_logo" src="../images/cart.png" width="60" height="40" onclick="press()">
+		</div>
 		<br>
-		<div>
-			<div style="float: left; width: 10px" onclick="swipeL()">&lt;&lt;</div>
-			<div style="float: right; width: 10px" onclick="swipeR()">&gt;&gt;</div>
-			<div style="display: inline; width: 30px; margin-left: auto; margin-right: auto" id="main_text" onclick="press()">Pagar</div>
+			<div style="float: left; width: 10px" class="swipe-btn" onclick="swipeL()">&lt;&lt;</div>
+			<div style="float: right; width: 10px" class="swipe-btn" onclick="swipeR()">&gt;&gt;</div>
+			<div style=" width: 30px; margin-left: auto; margin-right: auto" id="main_text" onclick="press()">Pagar</div>
 		</div>
 		<script>
 			clockRoutine();

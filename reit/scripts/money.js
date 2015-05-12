@@ -8,7 +8,8 @@ function getCorrectBalance(){
 	if(!hasCookie("balance"))
 		balance = 0;
 	else
-		balance = readCookie("balance");
+		balance = parseFloat(readCookie("balance")).toFixed(2);
+		console.log(balance);
 	return balance;
 }
 

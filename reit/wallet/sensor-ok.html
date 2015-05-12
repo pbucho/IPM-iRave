@@ -46,9 +46,19 @@
 				selectProduct();
 			}
 		</script>
+		<style>
+			html, body {
+				background-color:white;
+			}
+			#container {
+				background-color:white;
+				height:9em;
+			}
+		</style>
 	</head>
 	<body>
-		<div style="float: left">Saldo: <span id="balance"></span></div>
+		<div id="container">
+		<div id="balance-div" style="float: left">Saldo: <span id="balance"></span></div>
 		<div style="float: right" id="clock"></div><br>
 		<!--<div style="float: left">
 			<ul>
@@ -64,6 +74,7 @@
 			<img style="float: left" src="../images/back.png" width="10" height="10" onclick="goToThis('wallet.html')">
 			<div style="display: inline">Preço: <span id="product_price"></span> &euro;</div>
 			<img id="proceed_button" style="float: right" src="../images/ok.png" width="10" height="10" onclick="allowProceed()">
+		</div>
 		</div>
 		<script>
 			initialize();

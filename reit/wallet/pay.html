@@ -16,9 +16,19 @@
 				printBalance();
 			}
 		</script>
+		<style>
+			html, body {
+				background-color:white;
+			}
+			#container {
+				background-color:white;
+				height:9em;
+			}
+		</style>
 	</head>
 	<body>
-		<div style="float: left">Saldo: <span id="balance"></span></div>
+		<div id="container">
+		<div id="balance-div" style="float: left">Saldo: <span id="balance"></span></div>
 		<div style="float: right" id="clock"></div><br>
 		<!--<div>-->
 			<p style="float: left">Encoste o iRave ao sensor</p>
@@ -26,6 +36,7 @@
 			<!--<p style="text-align: right; margin-top: -3.5%"><button onclick="goToThis('wallet.html')">Cancelar</button></p>-->
 			<img style="float: left; display: inline" src="../images/back.png" width="10" height="10" onclick="goToThis('wallet.html')">
 		<!--</div>-->
+		</div>
 		<script>
 			initialize();
 			waitBeforeGo(3, "sensor-ok.html");

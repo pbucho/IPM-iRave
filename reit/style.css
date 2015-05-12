@@ -13,6 +13,20 @@
 	font-family: Roboto;
 	font-size: 6.5pt;
 }
+#balance-div {
+	text-decoration:underline;
+}
+.swipe-btn {
+	border:1px solid black;
+	border-radius:2px;
+}
+#main_text {
+	width:8em;
+	margin: 0 auto 0 auto;
+    	text-align: center;
+	font-weight:bold;
+	text-decoration:underline;
+}
 th {
         font-weight:bold;
 }
@@ -21,7 +35,7 @@ th {
 }
 body{
 	background-color: white;
-	/*background-image: url("images/backgnd.jpg");*/
+ 	background-image: url("images/background-default.jpg");
 }
 #clock{
 	border:1px solid black;

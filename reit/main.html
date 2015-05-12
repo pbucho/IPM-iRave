@@ -11,16 +11,20 @@
 			var linkArray = ["board/board.html","wallet/wallet.html","map/map.html","locked.html"];
 		</script>
 		<script src="scripts/swipe.js"></script>
+		<style>
+			/*div { border:1px solid red; }*/
+		</style>
 	</head>
 	<body>
+		<!-- to do: descer o div do menu para centrar a imagem (esta a bater no relogio) -->
 		<div style="float: right" id="clock"></div>
 		<div style="text-align: center; margin: 0 auto">
 			<img style="text-align: center; margin: 0 auto" id="main_logo" src="images/cartaz.png" width="60" height="40" onclick="press()">
 			<br>
 			<p>
-				<div style="float: left; margin: 0 auto" onclick="swipeL()">&lt;&lt;</div>
+				<div style="float: left; margin: 0 auto" class="swipe-btn" onclick="swipeL()">&lt;&lt;</div>
 				<div style="display: inline" id="main_text" onclick="press()">Cartaz</div>
-				<div style="float: right; margin: 0 auto" onclick="swipeR()">&gt;&gt;</div>
+				<div style="float: right; margin: 0 auto" class="swipe-btn" onclick="swipeR()">&gt;&gt;</div>
 			</p>
 		</div>
 		<script>

@@ -43,19 +43,28 @@
 				printBalance();
 			}
 		</script>
+		<style>		
+			p {
+				margin:0;
+			}
+			#main-frame {
+				margin-top:0.5em;
+			}
+		</style>
+
 	</head>
 	<body>
-		<div style="float: left">Saldo: <span id="balance"></span></div>
+		<div id="balance-div" style="float: left">Saldo: <span id="balance"></span></div>
 		<div style="float: right" id="clock"></div><br>
-		<!--<div>-->
-			<p>Valor a carregar:</p>
+		<div id="main-frame">
+			<p>Valor a carregar</p><p>(em Euros):</p>
 			<center>
 				<input type="number" id="inteiro" style="width: 50%">
 			</center><br>
 			<img style="float: left; display: inline" src="../images/back.png" width="10" height="10" onclick="goToThis('wallet.html')">
 			<div style="display: inline; margin-left: auto; margin-right: auto; color: red" id="error">&nbsp;</div>
 			<img style="float: right; display: inline" src="../images/ok.png" width="10" height="10" onclick="goTopUp()">
-		<!--</div>-->
+		</div>
 		<script>
 			initialize();
 		</script>
