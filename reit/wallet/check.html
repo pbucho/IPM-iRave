@@ -22,6 +22,7 @@
 				for(i = 0; i < trans.length; i++){
 					item = trans[i].split("$");
 					document.getElementById("trans").innerHTML += "<tr><td>" + item[1] + "</td><td>" + item[0] + "</td></tr>";
+					console.log("<tr><td>" + item[1] + "</td><td>" + item[0] + "</td></tr>");
 				}
 			}
 		
@@ -37,15 +38,34 @@
 				border: 1px solid black;
 				border-radius: 4px;
 			}
+			#table-header-div {
+				border:1px solid black;
+				height:1.5em;
+				width:11em;
+				margin:0.8em auto 0 auto;		
+				background-color:gray;
+				border-radius:3px;
+				
+			}
+			.header {
+				font-weight:bold;
+				text-decoration:underline;
+			}	
+			#trans {
+				margin-top:-2.0em;
+			 }
  		</style>
 	</head>
 	<body>
 		<div id="balance-div" style="float: left">Saldo: <span id="balance"></span></div>
 		<div style="float: right" id="clock"></div><br>		
 		<table id="trans" border="0" style="margin-left: auto; margin-right: auto; text-align: center; table-layout: fixed; width: 100px">
-			<th>
-				<td>Data</td><td>Valor</td>
-			</th>
+			
+			<tr>
+				<div id="table-header-div">
+				<th class="header">Data</th><th class="header">Valor</th>
+				</div>
+			</tr>
 		</table>
 		<img style="float: left; display: inline" src="../images/back.png" width="10" height="10" onclick="goToThis('wallet.html')">
 		<div style="display: inline; margin-left: auto; margin-right: auto; color: red" id="error">&nbsp;</div>

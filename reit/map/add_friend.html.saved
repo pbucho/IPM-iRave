@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE abiword PUBLIC "-//ABISOURCE//DTD AWML 1.0 Strict//EN" "http://www.abisource.com/awml.dtd">
+<abiword template="false" xmlns:ct="http://www.abisource.com/changetracking.dtd" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:math="http://www.w3.org/1998/Math/MathML" xid-max="121" xmlns:dc="http://purl.org/dc/elements/1.1/" fileformat="1.1" xmlns:svg="http://www.w3.org/2000/svg" xmlns:awml="http://www.abisource.com/awml.dtd" xmlns="http://www.abisource.com/awml.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" version="3.0.0" xml:space="preserve" props="dom-dir:ltr; document-footnote-restart-section:0; document-endnote-type:numeric; document-endnote-place-enddoc:1; document-endnote-initial:1; lang:en-US; document-endnote-restart-section:0; document-footnote-restart-page:0; document-footnote-type:numeric; document-footnote-initial:1; document-endnote-place-endsection:0">
+<!-- ======================================================================== -->
+<!-- This file is an AbiWord document.                                        -->
+<!-- AbiWord is a free, Open Source word processor.                           -->
+<!-- More information about AbiWord is available at http://www.abisource.com/ -->
+<!-- You should not edit this file by hand.                                   -->
+<!-- ======================================================================== -->
+
+<metadata>
+<m key="abiword.generator">AbiWord</m>
+<m key="dc.format">application/x-abiword</m>
+<m key="dc.title">iRave</m>
+</metadata>
+<rdf>
+</rdf>
+<styles>
+<s type="P" name="Normal" basedon="" followedby="Current Settings" props="font-family:Liberation Serif; margin-top:0pt; font-variant:normal; margin-left:0pt; text-indent:0in; widows:2; font-style:normal; font-weight:normal; text-decoration:none; color:000000; line-height:1.0; text-align:left; margin-bottom:0pt; text-position:normal; margin-right:0pt; bgcolor:transparent; font-size:12pt; font-stretch:normal"/>
+</styles>
+<pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+<section xid="1">
+<p style="Normal" xid="2">Adicionar<br/>Amigo </p>
+<p style="Normal" xid="3">Nome de utilizador do</p>
+<p style="Normal" xid="4">amigo:</p>
+<p style="Normal" xid="5">&gt; </p>
+<p style="Normal" xid="6" props="text-align:center"> </p>
+<table xid="7">
+<cell xid="8" props="bot-attach:1; left-attach:0; right-attach:1; top-attach:0">
+<p xid="9"> A </p>
+</cell>
+<cell xid="10" props="bot-attach:1; left-attach:1; right-attach:2; top-attach:0">
+<p xid="11">B </p>
+</cell>
+<cell xid="12" props="bot-attach:1; left-attach:2; right-attach:3; top-attach:0">
+<p xid="13">C </p>
+</cell>
+<cell xid="14" props="bot-attach:1; left-attach:3; right-attach:4; top-attach:0">
+<p xid="15">Cancel. </p>
+</cell>
+<cell xid="16" props="bot-attach:7; left-attach:5; right-attach:6; top-attach:6">
+<p xid="17"></p>
+</cell>
+<cell xid="18" props="bot-attach:6; left-attach:5; right-attach:6; top-attach:5">
+<p xid="19"></p>
+</cell>
+<cell xid="20" props="bot-attach:5; left-attach:6; right-attach:7; top-attach:4">
+<p xid="21"></p>
+</cell>
+<cell xid="22" props="bot-attach:5; left-attach:7; right-attach:8; top-attach:4">
+<p xid="23"></p>
+</cell>
+<cell xid="24" props="bot-attach:4; left-attach:5; right-attach:6; top-attach:3">
+<p xid="25"></p>
+</cell>
+<cell xid="26" props="bot-attach:2; left-attach:0; right-attach:1; top-attach:1">
+<p xid="27">D </p>
+</cell>
+<cell xid="28" props="bot-attach:2; left-attach:1; right-attach:2; top-attach:1">
+<p xid="29">E </p>
+</cell>
+<cell xid="30" props="bot-attach:2; left-attach:2; right-attach:3; top-attach:1">
+<p xid="31">F </p>
+</cell>
+<cell xid="32" props="bot-attach:2; left-attach:3; right-attach:4; top-attach:1">
+<p xid="33">Corrig. </p>
+</cell>
+<cell xid="34" props="bot-attach:7; left-attach:6; right-attach:7; top-attach:6">
+<p xid="35"></p>
+</cell>
+<cell xid="36" props="bot-attach:6; left-attach:6; right-attach:7; top-attach:5">
+<p xid="37"></p>
+</cell>
+<cell xid="38" props="bot-attach:5; left-attach:8; right-attach:9; top-attach:4">
+<p xid="39"></p>
+</cell>
+<cell xid="40" props="bot-attach:5; left-attach:9; right-attach:10; top-attach:4">
+<p xid="41"></p>
+</cell>
+<cell xid="42" props="bot-attach:4; left-attach:6; right-attach:7; top-attach:3">
+<p xid="43"></p>
+</cell>
+<cell xid="44" props="bot-attach:3; left-attach:0; right-attach:1; top-attach:2">
+<p xid="45">G </p>
+</cell>
+<cell xid="46" props="bot-attach:3; left-attach:1; right-attach:2; top-attach:2">
+<p xid="47">H </p>
+</cell>
+<cell xid="48" props="bot-attach:3; left-attach:2; right-attach:3; top-attach:2">
+<p xid="49">I </p>
+</cell>
+<cell xid="50" props="bot-attach:3; left-attach:3; right-attach:4; top-attach:2">
+<p xid="51">J </p>
+</cell>
+<cell xid="52" props="bot-attach:3; left-attach:4; right-attach:5; top-attach:2">
+<p xid="53">Shift </p>
+</cell>
+<cell xid="54" props="bot-attach:4; left-attach:7; right-attach:8; top-attach:3">
+<p xid="55"></p>
+</cell>
+<cell xid="56" props="bot-attach:7; left-attach:7; right-attach:8; top-attach:6">
+<p xid="57"></p>
+</cell>
+<cell xid="58" props="bot-attach:6; left-attach:7; right-attach:8; top-attach:5">
+<p xid="59"></p>
+</cell>
+<cell xid="60" props="bot-attach:5; left-attach:10; right-attach:11; top-attach:4">
+<p xid="61"></p>
+</cell>
+<cell xid="62" props="bot-attach:5; left-attach:11; right-attach:12; top-attach:4">
+<p xid="63"></p>
+</cell>
+<cell xid="64" props="bot-attach:4; left-attach:0; right-attach:1; top-attach:3">
+<p xid="65">K </p>
+</cell>
+<cell xid="66" props="bot-attach:4; left-attach:1; right-attach:2; top-attach:3">
+<p xid="67">L </p>
+</cell>
+<cell xid="68" props="bot-attach:4; left-attach:2; right-attach:3; top-attach:3">
+<p xid="69">M </p>
+</cell>
+<cell xid="70" props="bot-attach:4; left-attach:3; right-attach:4; top-attach:3">
+<p xid="71">N </p>
+</cell>
+<cell xid="72" props="bot-attach:4; left-attach:4; right-attach:5; top-attach:3">
+<p xid="73">O </p>
+</cell>
+<cell xid="74" props="bot-attach:7; left-attach:8; right-attach:9; top-attach:6">
+<p xid="75"></p>
+</cell>
+<cell xid="76" props="bot-attach:6; left-attach:8; right-attach:9; top-attach:5">
+<p xid="77"></p>
+</cell>
+<cell xid="78" props="bot-attach:5; left-attach:12; right-attach:13; top-attach:4">
+<p xid="79"></p>
+</cell>
+<cell xid="80" props="bot-attach:5; left-attach:13; right-attach:14; top-attach:4">
+<p xid="81"></p>
+</cell>
+<cell xid="82" props="bot-attach:5; left-attach:0; right-attach:1; top-attach:4">
+<p xid="83">P </p>
+</cell>
+<cell xid="84" props="bot-attach:5; left-attach:1; right-attach:2; top-attach:4">
+<p xid="85">Q </p>
+</cell>
+<cell xid="86" props="bot-attach:5; left-attach:2; right-attach:3; top-attach:4">
+<p xid="87">R </p>
+</cell>
+<cell xid="88" props="bot-attach:5; left-attach:3; right-attach:4; top-attach:4">
+<p xid="89">S </p>
+</cell>
+<cell xid="90" props="bot-attach:5; left-attach:4; right-attach:5; top-attach:4">
+<p xid="91">T </p>
+</cell>
+<cell xid="92" props="bot-attach:7; left-attach:9; right-attach:10; top-attach:6">
+<p xid="93"></p>
+</cell>
+<cell xid="94" props="bot-attach:6; left-attach:9; right-attach:10; top-attach:5">
+<p xid="95"></p>
+</cell>
+<cell xid="96" props="bot-attach:6; left-attach:0; right-attach:1; top-attach:5">
+<p xid="97">U </p>
+</cell>
+<cell xid="98" props="bot-attach:6; left-attach:1; right-attach:2; top-attach:5">
+<p xid="99">V </p>
+</cell>
+<cell xid="100" props="bot-attach:6; left-attach:2; right-attach:3; top-attach:5">
+<p xid="101">W </p>
+</cell>
+<cell xid="102" props="bot-attach:6; left-attach:3; right-attach:4; top-attach:5">
+<p xid="103">X </p>
+</cell>
+<cell xid="104" props="bot-attach:6; left-attach:4; right-attach:5; top-attach:5">
+<p xid="105">Y </p>
+</cell>
+<cell xid="106" props="bot-attach:7; left-attach:10; right-attach:11; top-attach:6">
+<p xid="107"></p>
+</cell>
+<cell xid="108" props="bot-attach:7; left-attach:0; right-attach:1; top-attach:6">
+<p xid="109">Z </p>
+</cell>
+<cell xid="110" props="bot-attach:7; left-attach:1; right-attach:2; top-attach:6">
+<p xid="111">- </p>
+</cell>
+<cell xid="112" props="bot-attach:7; left-attach:2; right-attach:3; top-attach:6">
+<p xid="113">_ </p>
+</cell>
+<cell xid="114" props="bot-attach:7; left-attach:3; right-attach:4; top-attach:6">
+<p xid="115">. </p>
+</cell>
+</table>
+<p style="Normal" xid="116">initialize(); </p>
+</section>
+<section xid="117">
+<p style="Normal" xid="118"><c></c></p>
+<p style="Normal" xid="119"><c></c></p>
+</section>
+<section xid="120">
+<p style="Normal" xid="121"></p>
+</section>
+</abiword>

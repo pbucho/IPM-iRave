@@ -16,7 +16,7 @@ function getCorrectBalance(){
 function printBalance(){
 	var output = balance;
 	if(balance - Math.floor(balance) == 0)
-		output = balance + ".00";
+		output = parseFloat(balance).toFixed(2);// + ".00";
 	document.getElementById("balance").innerHTML = output + " &euro;";
 }
 
