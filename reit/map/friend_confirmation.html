@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="pt">
+	<head>
+		<title>iRave</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../style.css">
+		<script src="../scripts/funcs.js"></script>
+		<script src="../scripts/time.js"></script>
+		<script src="../scripts/cookies.js"></script>
+		<script src="../scripts/money.js"></script>
+		<!-- TIME IS MONEY -->
+		<script>
+			setInterval(function(){
+					document.getElementById("main-text-div").style.display = 'none';
+					document.getElementById("confirmation").style.display = 'block';
+					},
+					5 * 1000);
+		
+			function initialize(){
+				clockRoutine();
+				getCorrectBalance();
+				printBalance();
+			}
+		</script>
+		<style>
+			#confirmation {
+				border:1px solid #006B00;
+				border-radius:3px;
+				margin-bottom:0.4em;
+				color:#006B00;
+			}
+			#confirmation {
+				margin-top:0.6em;
+				display:none;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="float: right" id="clock"></div><br>
+		<!--<div>-->
+			<div id="main-text-div">
+			<p id="header" style="float: left; font-weight:bold;">Á espera da confirmação do amigo...</p>
+			<p>Entretanto pode esperar, ou carregar no botão verde para continuar para o ecrã de selecção de amigos.</p>
+			</div>
+			<div id="confirmation">
+				<p>Amigo confirmado. Pode agora localizá-lo no mapa</p>
+			</div>
+			<img style="float: right; display: inline" src="../images/ok.png" width="10" height="10" onclick="goToThis('friend_selection.html')">
+		<!--</div>-->
+		<script>
+			initialize();
+			
+		</script>
+	</body>
+</html>

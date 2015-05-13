@@ -14,6 +14,8 @@
 				var trans = readCookie("transactions");
 				if(trans == "VOID"){
 					document.getElementById("trans").innerHTML = "Sem transacções a registar";
+					document.getElementById("trans").style.margin = '1.2em 0 0 0';
+					document.getElementById("table-header-div").style.display = 'none';
 					return;
 				}
 				
