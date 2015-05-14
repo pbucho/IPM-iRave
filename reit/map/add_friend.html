@@ -8,11 +8,13 @@
 		<script src="../scripts/time.js"></script>
 		<script>
 				var lower = 1;
-		        function initialize(){
+				function initialize(){
 					clockRoutine();
 				}
 				
 				function addToInput(chaar){
+					document.getElementById("input-error").style.display = 'none';
+					
 					if(lower == 1)
 						document.getElementById("username_input").value = document.getElementById("username_input").value + chaar.toLowerCase();
 					else {
@@ -25,6 +27,8 @@
 					document.getElementById("username_input").value = "";
 				}
 				function changeCase(){
+					document.getElementById("input-error").style.display = 'none';
+				
 					if(lower == 1) {
 						lower = 0;
 						document.getElementById("shift-active").style.display = 'block';
@@ -33,6 +37,18 @@
 						lower = 1;
 						document.getElementById("shift-active").style.display = 'none';
 					}
+				}
+				
+				function addFriend()
+				{
+					console.log(document.getElementById("username_input").value);
+					
+					if(document.getElementById("username_input").value == "")
+					{
+						document.getElementById("input-error").style.display = 'block';
+					}
+					else
+						goToThis('friend_confirmation.html');
 				}
 		</script>
 		
@@ -76,6 +92,16 @@
 			text-align:left;
 			
 		}
+		#input-error {
+			color:red;
+			text-decoration:underline;
+			margin-top:0.5em;
+			margin-bottom:0;
+			margin-left:0.5em;
+ 			display:none; 
+			text-align:left;
+			
+		}
 		</style>
 		
         </head>
@@ -88,9 +114,12 @@
 	<br>
 	      <p>Nome de utilizador do</p><p>amigo:</p>
 	      <input id="username_input" type="text" name="username"><br>
-	      <button style="width:2em;margin-top:-1.5em;margin-left:0.2em;" onclick="goToThis('friend_confirmation.html')">&gt;</button>
+	      <button style="width:2em;margin-top:-1.5em;margin-left:0.2em;" onclick="addFriend();">&gt;</button>
 		
 		<br>
+		<div id="input-error">
+			<p>Por favor, insira o nome do amigo a adicionar.</p>
+		</div>
 		<div id="shift-active">
 			<p>A próxima letra será maiúscula.</p>
 		</div>

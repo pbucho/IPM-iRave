@@ -19,20 +19,102 @@
 					document.getElementById("mapa").height = "50%";
 				}
 			}
+			
+			function zoomIn() 
+			{
+				if(document.getElementById("mapa").width > 534)
+					return;
+			
+				var currentWidth;
+				var currentHeight;
+				
+				document.getElementById("mapa").width += 70;
+				document.getElementById("mapa").height += 50;
+				
+				//max 600,388
+				currentWidth =  document.getElementById("mapa").width;
+				currentHeight = document.getElementById("mapa").height;
+				
+				console.log(currentWidth);
+				console.log(currentHeight);	
+			}
+			
+			function zoomOut() 
+			{
+				if(document.getElementById("mapa").width < 115)
+					return;
+					
+				var currentWidth;
+				var currentHeight;
+				
+				document.getElementById("mapa").width -= 70;
+				document.getElementById("mapa").height -= 50;
+				
+				currentWidth =  document.getElementById("mapa").width;
+				currentHeight = document.getElementById("mapa").height;
+				
+				console.log(currentWidth);
+				console.log(currentHeight);	
+			}
+			
 		</script>
 		<style> 
-			#wrapper img{
+			#mapa {
 				border: 2px solid black;
-				width: 250%;
+				border-radius:15px;
+				width:375 ;
+				height:126;
+				
+			}
+			#go-back  {
+				margin-top:0.5em;
 			}
 			#body{
 				background-color: pink;
+			}
+			button {
+				font-weight:bold;
+				height:2.2em;
+				width:2.5em;
+				margin-top:-0.3em;
+				margin-bottom:0.5em;
+			}
+			#zoom-out {
+				margin-left:0.3em;
+			}
+			#zoom-in {
+				margin-left:0;
+			}
+			#zoom-title {
+				font-size:1.5em;
+				margin-top:-0.7em;
+				margin-left:0.7em;
+			}
+			#go-back-div {
+				border:1px solid black;
+				border-radius:2px;
+				width:1.3em;
+				height:1.9em;
+				float:left;
+				
+			}
+			#zoom-control {
+				width:13em;
+				height:2em;
+				
 			}
 		</style>
 	</head>
 	<body>
         <div>
-			<img style="float: left" src="../images/back.png" width="10" height="10" onclick="goToThis('map.html')">
+			<div id="go-back-div" onclick="goToThis('map.html')">
+			<img id="go-back" style="float: left" src="../images/back.png" width="10" height="10" onclick="goToThis('map.html')">
+			</div>
+			<div id="zoom-control">
+			<span id="zoom-title">Zoom:<span>
+			<button id="zoom-out" onclick="zoomOut()">-</button>
+			<button id="zoom-in" onclick="zoomIn();">+</button>
+			<div>
         </div>
 
         <div id="wrapper">
