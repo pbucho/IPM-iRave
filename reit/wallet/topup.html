@@ -50,6 +50,9 @@
 			#main-frame {
 				margin-top:0.5em;
 			}
+			#inteiro {
+				margin-top:0.7em;
+			}
 		</style>
 
 	</head>
@@ -59,11 +62,11 @@
 		<div id="main-frame">
 			<p>Valor a carregar</p><p>(em Euros):</p>
 			<center>
-				<input type="number" id="inteiro" style="width: 50%">
+				<input type="number" id="inteiro" min="1" style="width: 50%">
 			</center><br>
-			<img style="float: left; display: inline" src="../images/back.png" width="10" height="10" onclick="goToThis('wallet.html')">
+			<img style="float: left; display: inline; margin-top:-1em" src="../images/back.png" width="10" height="10" onclick="goToThis('wallet.html')">
 			<div style="display: inline; margin-left: auto; margin-right: auto; color: red" id="error">&nbsp;</div>
-			<img style="float: right; display: inline" src="../images/ok.png" width="10" height="10" onclick="goTopUp()">
+			<img style="float: right; display: inline; margin-top:-1em" src="../images/ok.png" width="10" height="10" onclick="goTopUp()">
 		</div>
 		<script>
 			initialize();

@@ -69,8 +69,12 @@
 			#go-back  {
 				margin-top:0.5em;
 			}
-			#body{
-				background-color: pink;
+			html, body {
+				background-color:white;
+			}
+			#container {
+				background-color:white;
+				height:9em;
 			}
 			button {
 				font-weight:bold;
@@ -106,7 +110,7 @@
 		</style>
 	</head>
 	<body>
-        <div>
+        <div id="container">
 			<div id="go-back-div" onclick="goToThis('map.html')">
 			<img id="go-back" style="float: left" src="../images/back.png" width="10" height="10" onclick="goToThis('map.html')">
 			</div>

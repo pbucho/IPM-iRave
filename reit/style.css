@@ -36,6 +36,9 @@ th {
 body{
 	background-color: white;
  	background-image: url("images/background-default.jpg");
+	background-size:120% 140%;
+	background-repeat: no-repeat;
+	
 }
 #clock{
 	border:1px solid black;

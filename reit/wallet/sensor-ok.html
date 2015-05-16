@@ -47,12 +47,16 @@
 			}
 		</script>
 		<style>
-			html, body {
-				background-color:white;
+			body {
+				background-size:550% 550%;
 			}
-			#container {
-				background-color:white;
-				height:9em;
+			#img-div {
+				width:7em;
+				height:4.6em;
+				margin:0.5em auto 0 auto;
+			}
+			#product_pic {
+				border-radius:5px;
 			}
 		</style>
 	</head>
@@ -67,9 +71,11 @@
 				<li id="pref">Saldo final: <span id="final_balance"></span></li>
 			</ul>
 		</div>-->
-		<img id="product_pic" src="images/cartaz.png" width="60" height="40">
+		<div id="img-div">
+			<img id="product_pic" src="images/cartaz.png" width="60" height="40">
+		</div>
 		<br>
-		<center><div id="final_balance" style="display: inline; text-align: center; margin: 0 auto"></div></center>
+		<center><div id="final_balance" style="display: block; text-align: center; margin: 0 auto"></div></center>
 		<div style="text-align: center; margin: 0 auto">
 			<img style="float: left" src="../images/back.png" width="10" height="10" onclick="goToThis('wallet.html')">
 			<div style="display: inline">Preço: <span id="product_price"></span> &euro;</div>
