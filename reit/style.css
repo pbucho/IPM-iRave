@@ -14,7 +14,7 @@
 	font-size: 6.5pt;
 }
 #balance-div {
-	text-decoration:underline;
+	/*text-decoration:underline;*/
 }
 .swipe-btn {
 	border:1px solid black;
@@ -25,7 +25,7 @@
 	margin: 0 auto 0 auto;
     	text-align: center;
 	font-weight:bold;
-	text-decoration:underline;
+	/*text-decoration:underline;*/
 }
 th {
         font-weight:bold;
