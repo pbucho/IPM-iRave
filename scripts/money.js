@@ -3,35 +3,34 @@ var finalBal;
 var pin = 1234;
 var enteredPin = "";
 var pinChars = 0;
-var getVars = getUrlVars();
 
-if(getVars['balance'] == null)
-	balance = 150;
-else
-	balance = getVars['balance'];
-
-function getUrlVars(){
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
-        vars[key] = value;
-    });
-    return vars;
+function getCorrectBalance(){
+	if(!hasCookie("balance"))
+		balance = 0;
+	else
+		balance = parseFloat(readCookie("balance")).toFixed(2);
+		console.log(balance);
+	return balance;
 }
 
 function printBalance(){
 	var output = balance;
 	if(balance - Math.floor(balance) == 0)
-		output = balance + ".00";
-	document.getElementById("balance").innerHTML = output;
-}
-
-function addToBalanceBlind(value){
-	balance += value;
+		output = parseFloat(balance).toFixed(2);// + ".00";
+	document.getElementById("balance").innerHTML = output + " &euro;";
 }
 
 function addToBalance(value){
-	if(value >= 0 || -1 * value <= balance)
-		balance += value;
+	var bbal = parseFloat(balance);
+	bbal += parseFloat(value);
+	balance = parseFloat(bbal);
+	var dec = String(balance - Math.floor(balance));
+	var phonix = dec.lenght;
+	if(phonix > 4){
+		dec = dec.substr(0,4);
+		console.log("I wish that I could be like the cookies");
+	}
+	updateCookie("balance",balance);
 }
 
 function checkEnteredPin(){
@@ -76,36 +75,3 @@ function printPinChars(){
 	document.getElementById("pin_space").innerHTML = output;
 }
 
-function printFinalBalance()
-{
-	var result;
-	var output;
-	var message = "Balanço final: €";
-
-	var purchase = document.getElementById("purchase_amount").innerHTML;
-
-	purchase = purchase.split("€");
-
-	result = balance - parseFloat(purchase[1]).toFixed(2);
-	finalBal = result;
-
-	output = message.concat(result);
-
-
-	//alert(purchase);	
-	document.getElementById("final_balance").innerHTML = output;
-}
-
-function printCost()
-{
-	var output;
-	var euro = " €";
-	var result = Math.random();
-	
-	result *= 15;
-	result = result.toFixed(2);
-
-	output = euro.concat(result);
-
-	document.getElementById("purchase_amount").innerHTML = output;
-}

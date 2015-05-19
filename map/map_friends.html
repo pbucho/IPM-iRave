@@ -5,28 +5,124 @@
 		<meta charset="UTF-8">
 		<script src="../scripts/funcs.js"></script>
 		<link rel="stylesheet" type="text/css" href="../style.css">
-		<!--<script src="../scripts/jquery-latest.min.js"></script>
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>-->
-		<style> 
-			#wrapper img{
-				border: 2px solid black;
-				width: 250%;
+		<script>
+			var zoomed = false;
+			
+			function toggleZoom(){
+				if(zoomed){
+					zoomed = false;
+					document.getElementById("mapa").width = "100%";
+					document.getElementById("mapa").height = "100%";
+				}else{
+					zoomed = true;
+					document.getElementById("mapa").width = "50%";
+					document.getElementById("mapa").height = "50%";
+				}
 			}
-			#body{
-				background-color: pink;
+			
+			function zoomIn() 
+			{
+				if(document.getElementById("mapa").width > 534)
+					return;
+			
+				var currentWidth;
+				var currentHeight;
+				
+				document.getElementById("mapa").width += 70;
+				document.getElementById("mapa").height += 50;
+				
+				//max 600,388
+				currentWidth =  document.getElementById("mapa").width;
+				currentHeight = document.getElementById("mapa").height;
+				
+				console.log(currentWidth);
+				console.log(currentHeight);	
+			}
+			
+			function zoomOut() 
+			{
+				if(document.getElementById("mapa").width < 115)
+					return;
+					
+				var currentWidth;
+				var currentHeight;
+				
+				document.getElementById("mapa").width -= 70;
+				document.getElementById("mapa").height -= 50;
+				
+				currentWidth =  document.getElementById("mapa").width;
+				currentHeight = document.getElementById("mapa").height;
+				
+				console.log(currentWidth);
+				console.log(currentHeight);	
+			}
+			
+		</script>
+		<style> 
+			#mapa {
+				border: 2px solid black;
+				border-radius:15px;
+				width:375 ;
+				height:126;
+				
+			}
+			#go-back  {
+				margin-top:0.5em;
+			}
+			html, body {
+				background-color:white;
+			}
+			#container {
+				background-color:white;
+				height:9em;
+			}
+			button {
+				font-weight:bold;
+				height:2.2em;
+				width:2.5em;
+				margin-top:-0.3em;
+				margin-bottom:0.5em;
+			}
+			#zoom-out {
+				margin-left:0.3em;
+			}
+			#zoom-in {
+				margin-left:0;
+			}
+			#zoom-title {
+				font-size:1.5em;
+				margin-top:-0.7em;
+				margin-left:0.7em;
+			}
+			#go-back-div {
+				border:1px solid black;
+				border-radius:2px;
+				width:1.3em;
+				height:1.9em;
+				float:left;
+				
+			}
+			#zoom-control {
+				width:13em;
+				height:2em;
+				
 			}
 		</style>
-		
 	</head>
 	<body>
-	        <div>
-		<button onClick="goToThis('map.html')" style="width:10px; height:20px; font-size:10px;">&#10094;</button>
-		<button onClick="goToThis('friend_selection.html')" style="width:70px; height:20px; font-size:10px;">Amigos</button>
-				
-	        </div>
-	
-	        <div id="wrapper">
-	        <img src="../images/mapa_grande.jpg"> <!-- 460x276 px -> Este mapa é so um placeholder,é preciso um maior -->
-	        </div>
+        <div id="container">
+			<div id="go-back-div" onclick="goToThis('map.html')">
+			<img id="go-back" style="float: left" src="../images/back.png" width="10" height="10" onclick="goToThis('map.html')">
+			</div>
+			<div id="zoom-control">
+			<span id="zoom-title">Zoom:<span>
+			<button id="zoom-out" onclick="zoomOut()">-</button>
+			<button id="zoom-in" onclick="zoomIn();">+</button>
+			<div>
+        </div>
+
+        <div id="wrapper">
+	        <img src="../images/mapa_grande.jpg" id="mapa"> <!-- 460x276 px -> Este mapa é so um placeholder,é preciso um maior -->
+        </div>
 	</body>
 </html>

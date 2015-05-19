@@ -1,53 +1,45 @@
 <!DOCTYPE HTML>
-<html lang="pt">
+<html>
 	<head>
-		<title>iRave</title>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="../style.css">
-		<script src="../scripts/funcs.js"></script>
 		<script src="../scripts/time.js"></script>
+		<script src="../scripts/cookies.js"></script>
 		<script src="../scripts/money.js"></script>
-		<!-- TIME IS MONEY -->
 		<script>
-			function initialize(){
-				clockRoutine();
-				printBalance();
-			}
+			var swipePos = 1;
+			var imgArray = ["../images/cart.png","../images/record.png","../images/topup.png","../images/back.png"];
+			var textArray = ["Pagar","Consultar","Carregar","Voltar"];
+			var linkArray = ["pay.html","check.html","topup.html","../main.html"];
 		</script>
+		<script src="../scripts/swipe.js"></script>
 		<style>
-			#clock {
-				border:1px solid black;
-				border-radius: 4px;
+			#img{ 
+				margin-top:0.5em;
 			}
- 		</style>
+			#main_logo {
+				margin:0 auto 0 auto;
+				display: block;
+			}	
+		</style>
 	</head>
 	<body>
-		<!--<div style="float: left"><button width="5" height="5" onclick="goToThis('../start-iRave.html')">&lsaquo;</button>&nbsp;Saldo: €<span id="balance"></span></div>-->
-		<div style="float: left">
-			Saldo: &#8364;
-			<span id="balance">
-			</span>
+		<div id="container">
+		<div id="balance-div" style="float: left">Saldo: <span id="balance"></span></div>
+		<div style="float: right" id="clock"></div>
+		<br>
+		<div id="img">
+		<img style="text-align: center; margin: 0 auto" id="main_logo" src="../images/cart.png" width="60" height="40" onclick="press()">
 		</div>
-		
-		<div style="float: right" id="clock">
-		</div>
-		
-		<div style="text-align: center">
-			<br><br>
-			Seleccione uma opção
-			<table id="wallet_menu" border="0">
-				<tr>
-					<td style="text-align: right"><button onclick="goToThis('pay.html')">Pagar</button></td>
-					<td style="text-align: left"><button onclick="goToThis('check.html')">Consultar</button><td>
-				</tr>
-				<tr>
-					<td style="text-align: right"><button onclick="goToThis('topup.html')">Carregar</button></td>
-					<td style="text-align: left"><button onClick="goToThis('../start-iRave.html')">Cancelar</button></td>
-				</tr>
-			</table>
+		<br>
+			<div style="float: left; width: 10px" class="swipe-btn" onclick="swipeL()">&lt;&lt;</div>
+			<div style="float: right; width: 10px" class="swipe-btn" onclick="swipeR()">&gt;&gt;</div>
+			<div style=" width: 30px; margin-left: auto; margin-right: auto" id="main_text" onclick="press()">Pagar</div>
 		</div>
 		<script>
-			initialize()
+			clockRoutine();
+			getCorrectBalance();
+			printBalance();
 		</script>
 	</body>
 </html>

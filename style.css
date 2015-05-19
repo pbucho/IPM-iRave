@@ -13,6 +13,20 @@
 	font-family: Roboto;
 	font-size: 6.5pt;
 }
+#balance-div {
+	/*text-decoration:underline;*/
+}
+.swipe-btn {
+	border:1px solid black;
+	border-radius:2px;
+}
+#main_text {
+	width:8em;
+	margin: 0 auto 0 auto;
+    	text-align: center;
+	font-weight:bold;
+	/*text-decoration:underline;*/
+}
 th {
         font-weight:bold;
 }
@@ -21,7 +35,10 @@ th {
 }
 body{
 	background-color: white;
-	background-image: url("images/backgnd.jpg");
+ 	background-image: url("images/background-default.jpg");
+	background-size:120% 140%;
+	background-repeat: no-repeat;
+	
 }
 #clock{
 	border:1px solid black;
@@ -79,4 +96,10 @@ ul > li{
 }
 #title {
         font-weight:bold;
+}
+
+.pin_button{
+	border:1px solid black;
+	border-radius: 4px;
+	text-align: center;
 }

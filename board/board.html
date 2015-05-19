@@ -6,45 +6,52 @@
 		<link rel="stylesheet" type="text/css" href="../style.css">
 		<script src="../scripts/funcs.js"></script>
 		<script src="../scripts/time.js"></script>
-		<!-- TIME IS MONEY -->
 		<script>
+			var swipePos = 4;
+			var stages = ["Palco NOS","Palco Heineken","Palco Sagres","Jardim Caixa"];
+			var artists = [["Muse - 22h00","Alt-J - 23h00","Ben Harper &amp; The Innocent Criminals - 0h00"],["Metronomy - 22h00","Django Django - 23h00","Jessie Ware - 0h00"],["Tiga - 22h00","Ten Walls - 23h00","Julio Bashmore - 0h00"],["Herman José - 22h00","Francisco Menezes - 23h00","Rui Xará - 0h00"]];
+			
+			function swipeL(){
+				swipePos--;
+				if(swipePos < 1)
+					swipePos = 4;
+				printAfterSwipe();
+			}
+			
+			function swipeR(){
+				swipePos++;
+				if(swipePos > 4)
+					swipePos = 1;
+				printAfterSwipe();
+			}
+			
+			function printAfterSwipe(){
+				var len = artists[swipePos - 1].length;
+				document.getElementById("content").innerHTML = "<ul>";
+				for(i = 0; i < len; i++){
+					document.getElementById("content").innerHTML += "<li>" + artists[swipePos - 1][i] + "</li>";
+				}
+				document.getElementById("content").innerHTML += "</ul>";
+				document.getElementById("main_text").innerHTML = stages[swipePos - 1];
+			}
 		</script>
 		<style>
-			#clock {
-				border:1px solid black;
-				border-radius: 4px;
-			}
-			.artist {
-				font-weight:bold;
-				text-decoration:underline;
-				color:#8B0000;
-			}
- 		</style>
+				
+		</style>
 	</head>
 	<body>
-		<div style="float: left">
-			<button onclick="goToThis('../start-iRave.html')">&#10094;</button>
-		</div>
+		<img style="float: left" src="../images/back.png" width="10" height="10" onclick="goToThis('../main.html')">
+		<div style="float: right" id="clock"></div>
 		<br>
-		<table border="1" style="border-collapse: collapse; margin-left: auto; margin-right:auto; width: 100%">
-			<tr>
-				<th>Artista</th><th>Hora</th><th>Palco</th>
-			</tr>
-			<tr>
-				<td class="artist">Muse</td><td>22:00</td><td>NOS</td>
-			</tr>
-			<tr>
-				<td class="artist">James Bay</td><td>22:00</td><td>Heineken</td>
-			</tr>
-			<tr>
-				<td class="artist">Capicua</td><td>23:00</td><td>Clubbing</td>
-			</tr>
-			<tr>
-				<td class="artist">H. José</td><td>23:00</td><td>Caixa</td>
-			</tr>
-		</table>
+		<div id="content" style="line-height: 100%; margin: 0 auto 1em 0.5em;"></div>
+		<div style="float: left; margin: 0 auto" class="swipe-btn" onclick="swipeL()">&lt;&lt;</div>
+		<div style="" id="main_text" onclick="press()"><p>Palco NOS</p></div>
+		<div style="float: right; margin-top:-1.7em;  " class="swipe-btn" onclick="swipeR()">&gt;&gt;</div>
+		<br>
+		
 		<script>
-
+			clockRoutine();
+			swipeR();
 		</script>
 	</body>
 </html>

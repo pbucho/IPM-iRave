@@ -6,39 +6,85 @@
 		<link rel="stylesheet" type="text/css" href="../style.css">
 		<script src="../scripts/funcs.js"></script>
 		<script src="../scripts/time.js"></script>
+		<script src="../scripts/cookies.js"></script>
 		<script src="../scripts/money.js"></script>
 		<!-- TIME IS MONEY -->
 		<script>
+			var prodNames = ["Água","Um Bongo","Super Bock","Sangria"];
+			var prodPrices = [0.50, 1.20, 0.40, 0.50];
+			var prodPics = ["../images/agua.jpg","../images/bongo.jpg","../images/sbock.jpg","../images/sangria.jpg"];
+			
+			var allow = false;
+			
+			function selectProduct(){
+				var item = Math.floor((Math.random() * 4));
+				var finalCost = getCorrectBalance() - prodPrices[item];
+				
+				document.getElementById("product_pic").src = prodPics[item];
+				if(finalCost < 0){
+					document.getElementById("final_balance").innerHTML = "<span style='color: red'>Saldo insuficiente</span>";
+					var okok = document.getElementById("proceed_button");
+					okok.parentNode.removeChild(okok);
+				}else{
+					allow = true;
+				}
+				document.getElementById("product_price").innerHTML = prodPrices[item];
+				updateCookie("transaction_value",prodPrices[item]);
+			}
+			
+			function allowProceed(){
+				if(allow)
+					goToThis("pin.html");
+				else
+					goToThis("wallet.html");
+			}
+		
 			function initialize(){
 				clockRoutine();
+				getCorrectBalance();
 				printBalance();
-				printCost();
-				printFinalBalance();
+				selectProduct();
 			}
 		</script>
+		<style>
+			body {
+				background-size:550% 550%;
+			}
+			#img-div {
+				width:7em;
+				height:4.6em;
+				margin:0.5em auto 0 auto;
+			}
+			#product_pic {
+				border-radius:5px;
+			}
+		</style>
 	</head>
 	<body>
-		<div style="float: left">Saldo: &#8364; <span id="balance"></span></div>
+		<div id="container">
+		<div id="balance-div" style="float: left">Saldo: <span id="balance"></span></div>
 		<div style="float: right" id="clock"></div><br>
-		<div style="float: left">
-			<ul id="sensor-ok_list">
-				
-				<li><b>Custo total:<span id="purchase_amount"></span></b></li>
-				<li><p id="final_balance"></p></li>
+		<!--<div style="float: left">
+			<ul>
+				<li>Produto: <span id="product_name"></span></li>
+				<li>Custo total: <span id="purchase_amount"></span></li>
+				<li id="pref">Saldo final: <span id="final_balance"></span></li>
 			</ul>
+		</div>-->
+		<div id="img-div">
+			<img id="product_pic" src="images/cartaz.png" width="60" height="40">
 		</div>
-		<button onclick="goToThis('wallet.html')" style="float: left">Cancelar</button>
-		<!--<button onclick="goToThis('pin.html')">OK</button>-->
-		<!--<form method="GET" action="pin.html">
-			<input type="hidden" name="balance" id="final_balance_get">
-			<input type="submit" value="OK">
-		</form>-->
-		<button id="ok" style="float: right">
-			OK
-		</button>
+		<br>
+		<center><div id="final_balance" style="display: block; text-align: center; margin: 0 auto"></div></center>
+		<div style="text-align: center; margin: 0 auto">
+			<img style="float: left" src="../images/back.png" width="10" height="10" onclick="goToThis('wallet.html')">
+			<div style="display: inline">Preço: <span id="product_price"></span> &euro;</div>
+			<img id="proceed_button" style="float: right" src="../images/ok.png" width="10" height="10" onclick="allowProceed()">
+		</div>
+		</div>
 		<script>
 			initialize();
-			document.getElementById("ok").onclick = function(){goToThis('pin.html?balance=' + finalBal)};
+			//document.getElementById("ok").onclick = function(){goToThis('pin.html?balance=' + finalBal)};
 		</script>
 	</body>
 </html>

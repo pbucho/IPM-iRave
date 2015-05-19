@@ -1,36 +1,36 @@
 <!DOCTYPE HTML>
-<html lang="pt">
+<html>
 	<head>
-		<title>iRave</title>
 		<meta charset="UTF-8">
-		<script>
-			var strWindowFeatures = "titlebar=no,scrollbar=yes,toolbar=no,location=no,menubar=no,height=75,width=122";
-			
-			function startIRave(){
-				nwWindow = window.open("start-iRave.html", "iRave", strWindowFeatures );
-			}
-		</script>
+		<title>iRave</title>
 		<style>
+			html {
+				width:100%;
+				height:100%;
+			}
 			body{
+				position:absolute;
 				background-image: url("images/wrist.jpg");
-				background-size: 48% 200%;
-				background-position: 65% 13%;
+				background-size: 63% 65%;
+				background-position: 50% 50%;
 				background-repeat: no-repeat;
-				/*background-size: cover;*/
+				
+				
+				
 			}
 			#iRave {
 				overflow-x:auto;
 				border:2px solid black;
 				border-radius:10px;
+				margin-left:29.5em;
+				margin-top:15em;
+
 			}
 		</style>
 	</head>
 	<body>
-		<!--<button onclick="startIRave()">Ligar iRave</button>-->
-		<div style="text-align: center">
-			<p style="font-size: 20pt"><b>iRave</b></p>
-			<p>&nbsp;</p>
-			<iframe id="iRave" src="start-iRave.html" height="95" width="122" frameborder="0"></iframe>
+		<div id="container">
+		<iframe id="iRave" style="overflow: hidden" scrolling="no" id="iRave" src="main.html" height="95" width="122" frameborder="0"></iframe>
 		</div>
 	</body>
 </html>

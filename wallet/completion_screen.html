@@ -1,43 +1,50 @@
 <!DOCTYPE HTML>
-<html lang="pt">
+<html>
 	<head>
-		<title>iRave</title>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="../style.css">
 		<script src="../scripts/funcs.js"></script>
 		<script src="../scripts/time.js"></script>
+		<script src="../scripts/cookies.js"></script>
 		<script src="../scripts/money.js"></script>
 		<script>
-		function initialize(){
-				clockRoutine();
+			function completeTransaction(){
+				var meses = ["Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez"];
+			
+				var trValue = parseFloat(readCookie("transaction_value"));
+				addToBalance(-1 * trValue);
 				printBalance();
-				document.getElementById("novo").onclick = function(){goToThis("pay.html?balance=" + balance)};
+				deleteCookie("transaction_value");
+				
+				var trans = readCookie("transactions");
+				var now = new Date();
+				if(trans != "VOID")
+					trans += ";" + (-1 * trValue) + "$" + now.getDate() + "-" + meses[now.getMonth()];
+				else
+					trans = (-1 * trValue) + "$" + now.getDate() + "-" + meses[now.getMonth()];
+				updateCookie("transactions",trans);
+			}
+		
+			function initialize(){
+				clockRoutine();
+				getCorrectBalance();
+				printBalance();
+				completeTransaction();
 			}
 		</script>
-		<style>
-			#voltar {
-				margin-left: 30px;
-			
-				margin-top:5px;
-			}
-			#msg {
-				padding-top: 10px;
-				clear:both;
-			}
-		</style>
 	</head>
 	<body>
-		<div style="float: left">Saldo: &#8364; <span id="balance"></span></div>
-		<div style="float: right" id="clock"></div>
-
-		<p id="msg">Pagamento efectuado com sucesso!</p>
-
-		<!--<button id="novo" onclick="goToThis('pay.html')">Novo pagamento</button>-->
-		<button id="voltar" onclick="goToThis('../start-iRave.html')">Voltar</button>
-
+		<div id="balance-div" style="float: left">Saldo: <span id="balance"></span></div>
+		<div style="float: right" id="clock"></div><br>
+		<br>
+		<center>
+			<img src="../images/ok.png" width="25" height="25" onclick="goToThis('wallet.html')">
+			<div id="msg">Sucesso!</div>
+		</center>
+		<img style="float: left; display: inline" src="../images/back.png" width="10" height="10" onclick="goToThis('wallet.html')">
+		<div style="display: inline; margin-left: auto; margin-right: auto; color: red" id="error">&nbsp;</div>
 		<script>
 			initialize();
 		</script>
 	</body>
-
 </html>

@@ -6,26 +6,39 @@
 		<link rel="stylesheet" type="text/css" href="../style.css">
 		<script src="../scripts/funcs.js"></script>
 		<script src="../scripts/time.js"></script>
+		<script src="../scripts/cookies.js"></script>
 		<script src="../scripts/money.js"></script>
 		<!-- TIME IS MONEY -->
 		<script>
 			function initialize(){
 				clockRoutine();
+				getCorrectBalance();
 				printBalance();
 			}
 		</script>
+		<style>
+			body {
+				background-size:480% 480%;
+			}
+			img {
+				border-radius:10px;
+			}
+		</style>
 	</head>
 	<body>
-		<div style="float: left">Saldo: &#8364; <span id="balance"></span></div>
+		<div id="container">
+		<div id="balance-div" style="float: left">Saldo: <span id="balance"></span></div>
 		<div style="float: right" id="clock"></div><br>
 		<!--<div>-->
-			<p>Encoste o iRave ao sensor</p>
-			<p style="text-align: right">A aguardar...<br></p>
-			<p style="text-align: right; margin-top: -3.5%"><button onclick="goToThis('wallet.html')">Cancelar</button></p>
+			<p style="float: left">Encoste o iRave ao sensor</p>
+			<center><img src="../images/spinner.gif" width="25" height="25"></center>
+			<!--<p style="text-align: right; margin-top: -3.5%"><button onclick="goToThis('wallet.html')">Cancelar</button></p>-->
+			<img style="float: left; display: inline" src="../images/back.png" width="10" height="10" onclick="goToThis('wallet.html')">
 		<!--</div>-->
+		</div>
 		<script>
 			initialize();
-			waitBeforeGo(1, "sensor-ok.html?balance=" + balance);
+			waitBeforeGo(3, "sensor-ok.html");
 		</script>
 	</body>
 </html>

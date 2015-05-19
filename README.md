@@ -1,3 +1,0 @@
-### IPM-iRave ###
-
-## Projecto IPM ##

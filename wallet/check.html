@@ -6,12 +6,33 @@
 		<link rel="stylesheet" type="text/css" href="../style.css">
 		<script src="../scripts/funcs.js"></script>
 		<script src="../scripts/time.js"></script>
+		<script src="../scripts/cookies.js"></script>
 		<script src="../scripts/money.js"></script>
 		<!-- TIME IS MONEY -->
 		<script>
+			function getTransactions(){
+				var trans = readCookie("transactions");
+				if(trans == "VOID"){
+					document.getElementById("trans").innerHTML = "Sem transacções a registar";
+					document.getElementById("trans").style.margin = '1.2em 0 0 0';
+					document.getElementById("table-header-div").style.display = 'none';
+					return;
+				}
+				
+				trans = trans.split(";");
+				var item;
+				for(i = 0; i < trans.length; i++){
+					item = trans[i].split("$");
+					document.getElementById("trans").innerHTML += "<tr><td>" + item[1] + "</td><td>" + item[0] + "</td></tr>";
+					console.log("<tr><td>" + item[1] + "</td><td>" + item[0] + "</td></tr>");
+				}
+			}
+		
 			function initialize(){
 				clockRoutine();
-				//printBalance();
+				getCorrectBalance();
+				printBalance();
+				getTransactions();
 			}
 		</script>
 		<style>
@@ -19,51 +40,37 @@
 				border: 1px solid black;
 				border-radius: 4px;
 			}
+			#table-header-div {
+				border:1px solid black;
+				height:1.5em;
+				width:11em;
+				margin:0.8em auto 0 auto;		
+				background-color:gray;
+				border-radius:3px;
+				
+			}
+			.header {
+				font-weight:bold;
+				text-decoration:underline;
+			}	
+			#trans {
+				margin-top:-2.0em;
+			 }
  		</style>
 	</head>
 	<body>
-		<!--<div style="float: left"><button width="5" height="5" onclick="goToThis('../start-iRave.html')">&lsaquo;</button>&nbsp;Saldo: €<span id="balance"></span></div>-->
-		<div style="float: left">
-			<button onclick="goToThis('wallet.html')">&#10094;</button>
-			<!--Saldo: &#8364; <span id="balance">
-			</span>-->
-		</div>
-		
-		<div style="float: right" id="clock">
-		</div>
-		
-		<br><br>
-		
-		<!--<iframe src="check_content.html" frameborder="0" style="position: relative; height: 5%; width: 100%;"></iframe>-->
-		
-		<table border="1" style="border-collapse: collapse; margin-left: auto; margin-right:auto; width: 100%">
+		<div id="balance-div" style="float: left">Saldo: <span id="balance"></span></div>
+		<div style="float: right" id="clock"></div><br>		
+		<table id="trans" border="0" style="margin-left: auto; margin-right: auto; text-align: center; table-layout: fixed; width: 100px">
+			
 			<tr>
-				<th>Data</th><th>Valor</th>
-			</tr>
-			<tr>
-				<td>14-04</td><td>&#8364; 2.75</td>
-			</tr>
-			<tr>
-				<td>14-04</td><td>&#8364; 5.99</td>
-			</tr>
-			<tr>
-				<td>14-04</td><td>&#8364; 6.66</td>
-			</tr>
-			<tr>
-				<td>13-04</td><td>&#8364; 6.66</td>
-			</tr>
-			<tr>
-				<td>13-04</td><td>&#8364; 6.66</td>
-			</tr>
-			<tr>
-				<td>12-04</td><td>&#8364; 6.66</td>
+				<div id="table-header-div">
+				<th class="header">Data</th><th class="header">Valor</th>
+				</div>
 			</tr>
 		</table>
-		
-		<!--<div style="text-align: center; overflow-y: auto">
-			
-		</div>-->
-		
+		<img style="float: left; display: inline" src="../images/back.png" width="10" height="10" onclick="goToThis('wallet.html')">
+		<div style="display: inline; margin-left: auto; margin-right: auto; color: red" id="error">&nbsp;</div>
 		<script>
 			initialize();
 		</script>

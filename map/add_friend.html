@@ -8,24 +8,47 @@
 		<script src="../scripts/time.js"></script>
 		<script>
 				var lower = 1;
-		        function initialize(){
+				function initialize(){
 					clockRoutine();
 				}
 				
 				function addToInput(chaar){
+					document.getElementById("input-error").style.display = 'none';
+					
 					if(lower == 1)
 						document.getElementById("username_input").value = document.getElementById("username_input").value + chaar.toLowerCase();
-					else
+					else {
 						document.getElementById("username_input").value = document.getElementById("username_input").value + chaar;
+						lower = 1;
+						document.getElementById("shift-active").style.display = 'none';
+					}
 				}
 				function resetInput(){
 					document.getElementById("username_input").value = "";
 				}
 				function changeCase(){
-					if(lower == 1)
+					document.getElementById("input-error").style.display = 'none';
+				
+					if(lower == 1) {
 						lower = 0;
-					else
+						document.getElementById("shift-active").style.display = 'block';
+					}
+					else {
 						lower = 1;
+						document.getElementById("shift-active").style.display = 'none';
+					}
+				}
+				
+				function addFriend()
+				{
+					console.log(document.getElementById("username_input").value);
+					
+					if(document.getElementById("username_input").value == "")
+					{
+						document.getElementById("input-error").style.display = 'block';
+					}
+					else
+						goToThis('friend_confirmation.html');
 				}
 		</script>
 		
@@ -35,7 +58,7 @@
 			font-size: 9px;
 			}
 		#username_input {
-			margin-top:0.6em;
+			margin-top:1em;
 			margin-left:0.2em;
 			width:7.5em;
 			float:left;
@@ -55,6 +78,30 @@
 			width:8em;
 			margin-right:-0.5em;
 		}
+		p {
+			margin-top:-0.3em;
+			margin-bottom:-0.0em;
+		}	
+		#shift-active {
+			color:red;
+			text-decoration:underline;
+			margin-top:0.5em;
+			margin-bottom:0;
+			margin-left:0.5em;
+			display:none;
+			text-align:left;
+			
+		}
+		#input-error {
+			color:red;
+			text-decoration:underline;
+			margin-top:0.5em;
+			margin-bottom:0;
+			margin-left:0.5em;
+ 			display:none; 
+			text-align:left;
+			
+		}
 		</style>
 		
         </head>
@@ -65,11 +112,19 @@
 	
 	<br>
 	<br>
-	        Nome de utilizador do amigo: 
-	        <input id="username_input" type="text" name="username"><br>
-	        <button style="width:2em;margin-top:0.6em;margin-left:0.2em;" onclick="goToThis('map_empty.html')">&gt;</button>
+	      <p>Nome de utilizador do</p><p>amigo:</p>
+	      <input id="username_input" type="text" name="username"><br>
+	      <button style="width:2em;margin-top:-1.5em;margin-left:0.2em;" onclick="addFriend();">&gt;</button>
+		
+		<br>
+		<div id="input-error">
+			<p>Por favor, insira o nome do amigo a adicionar.</p>
+		</div>
+		<div id="shift-active">
+			<p>A próxima letra será maiúscula.</p>
+		</div>
 	        
-	        <div id="pin_space" style="text-align: center">&nbsp;</div>
+	      <div id="pin_space" style="text-align: center; margin-top:-1em;">&nbsp;</div>
 		<table id="pin" border="0" style="border-spacing: 0px">
 			<tr>
 				<td>
@@ -88,7 +143,7 @@
 					</button>
 				</td>
 				<td>
-					<button class="non-alpha" id="cancel" onclick="goToThis('map.html')"> <!-- ou sensor-ok.html ?? -->
+					<button class="non-alpha" id="cancel" onclick="goToThis('friend_selection.html')"> 
 						Cancel.
 					</button>
 				</td>
